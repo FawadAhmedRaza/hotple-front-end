@@ -1,12 +1,10 @@
 'use client'
 import React, { useState } from 'react'
 import Div from '@/components/ui/div'
-import SolidButton from '@/components/ui/Buttons/solid-button'
 import Logo from '@/components/logo'
 import Link from 'next/link'
 import Button from '@/components/ui/Buttons/button'
 import SearchInput from '@/components/search-input'
-import Iconify from '@/components/ui/Iconify-icons/Iconify'
 import BgIcon from '@/components/ui/Iconify-icons/bg-icon'
 
 
@@ -35,7 +33,7 @@ const Header = () => {
 
             <div className=" flex lg:hidden gap-2 ">
                 {!activeSearchBar && <BgIcon icon={'lucide:search'} className={'flex sm:hidden'} onClick={() => ssetActiveSearchBar(!activeSearchBar)} />}
-                {
+                {   
                     activeSearchBar ? (
                         <Button className={' !text-nowrap'}  onClick={() => ssetActiveSearchBar(!activeSearchBar)} >取消</Button>
                     ) : (
@@ -47,4 +45,4 @@ const Header = () => {
     )
 }
 
-export default Header
+export default Header
