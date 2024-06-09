@@ -8,7 +8,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        // light theme palette
+        // dark theme palette
         'light_primary_label': '#333333',
         'light_secondary_label': 'rgba(51,51,51,0.8)',
         'light_tertiary_label': 'rgba(51,51,51,0.6)',
@@ -16,7 +16,7 @@ module.exports = {
         'light_bg_grey': '#F7F7F7',
         'light_link_label': '#13386c',
 
-        // dark theme palette
+        // light theme palette 
         'dark_primary_label': '#fff',
         'dark_secondary_label': 'hsla(0,0%,100%,0.8)',
         'dark_tertiary_label': 'hsla(0,0%,100%,0.6)',
@@ -42,6 +42,9 @@ module.exports = {
       },
       fontWeight: {
         550: '550'
+      },
+      width: {
+        '18wd': '18px'
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",

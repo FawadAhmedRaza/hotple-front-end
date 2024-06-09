@@ -1,5 +1,5 @@
 import React from 'react'
-import Iconify from '../../Iconify'
+import Iconify from '../../Iconify-icons/Iconify'
 
 const IconButton = ({ className, children, icon, iconClass, onClick }) => {
     return (
