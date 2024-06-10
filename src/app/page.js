@@ -4,8 +4,11 @@ import Home from "@/pages/home";
 export default function MainHome() {
 
   return (
-    <>
+    <div>
       <Home />
-    </>
+     
+    </div>
   );
 }
+
+

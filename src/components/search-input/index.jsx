@@ -6,13 +6,12 @@ import Iconify from '../ui/Iconify-icons/Iconify'
 const SearchInput = () => {
     // states and Variables
     const [search, setSearch] = useState('')
-    let inputRef = useRef(null)
 
+    // /function 
     const handleSearch = (value) => {
         setSearch(value)
 
     }
-
 
     return (
         <div className=' flex justify-between dark:bg-dark_bg_grey bg-light_bg_grey rounded-full px-3.5 py-2 w-full '>

@@ -19,7 +19,7 @@ module.exports = {
         // light theme palette 
         'dark_primary_label': '#fff',
         'dark_secondary_label': 'hsla(0,0%,100%,0.8)',
-        'dark_tertiary_label': 'hsla(0,0%,100%,0.6)',
+        'dark_tertiary_label': 'hsla(0,0%,100%,0.6)', 
         'dark_quaternary_label': 'hsla(0,0%,100%,0.3)',
         'dark_bg_grey': '#141414',
         'dark_link_label': '#c7daef',
@@ -27,6 +27,7 @@ module.exports = {
         // utility
         'red': '#ff2e4d',
         'slate': '#363F4D',
+        'custom_black': '#0A0A0A'
       },
       fontSize: {
         '26fs': "26px",
@@ -44,7 +45,12 @@ module.exports = {
         550: '550'
       },
       width: {
-        '18wd': '18px'
+        '18wd': '18px',
+        '22wd': '22px',
+        '270wd': '270px',
+      },
+      height: {
+        '92ph ': '92%',
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",

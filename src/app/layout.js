@@ -1,6 +1,6 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Header from "@/sections/header";
+import Header from "@/components/sections/header";
 
 
 export const metadata = {
@@ -11,8 +11,8 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={``}>
-        <Header /> 
+      <body className="overflow-x-hidden dark:bg-custom_black bg-dark_primary_label">
+        <Header />  
         {children}
       </body>
     </html>
