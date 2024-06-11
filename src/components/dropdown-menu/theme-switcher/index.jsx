@@ -15,7 +15,7 @@ const ThemeSwitcher = ({themeIcons}) => {
     };
 
     return (
-        <div className="flex flex-col gap-3 px-2 py-2.5">
+        <div className="flex flex-col gap-3 px-2 py-2.5  border-b lg:border-none dark:border-neutral-800 border-gray-200">
             <Span className={'dark:!text-dark_tertiary_label !text-light_secondary_label'}>设置</Span>
             <div className="flex items-center justify-between">
                 <Paragraph className={'dark:!text-dark_secondary_label'}>深色模式</Paragraph>

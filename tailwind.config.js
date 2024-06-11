@@ -6,8 +6,8 @@ module.exports = {
     "./src/sections/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
-  
-  darkMode:"class",
+
+  darkMode: "class",
   theme: {
     extend: {
       colors: {
@@ -30,7 +30,9 @@ module.exports = {
         // utility
         'red': '#ff2e4d',
         'slate': '#363F4D',
-        'custom_black': '#0A0A0A'
+        'custom_black': '#0A0A0A',
+        'brown': "#212121",
+        'brownish_black': '#181818',
       },
       fontSize: {
         '26fs': "26px",

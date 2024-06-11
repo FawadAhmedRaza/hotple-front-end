@@ -7,7 +7,6 @@ import Explore from '../explore'
 const Home = () => {
   const { isAuthenticated } = useAuthContext();
   const { user } = useAuthContext();
-  console.log("isAuthenticated in home", isAuthenticated)
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
@@ -22,8 +21,8 @@ const Home = () => {
     
     <div className='lg:pt-16'>
       {/* <UserRegisterView isOpen={isOpen} setIsOpen={setIsOpen}  /> */}
-      <UserLoginView isOpen={isOpen} setIsOpen={setIsOpen} />
-
+      <UserLoginView isOpen={isOpen} setIsOpen={setIsOpen}  />
+      
       <Explore />
 
     </div>

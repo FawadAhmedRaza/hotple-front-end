@@ -1,7 +1,7 @@
 "use client"
 import React from 'react'
 import RHFTextInput from "@/components/rhf-hooks/RHFTextfiels";
-import Modal from "@/components/modal";
+import Modal from "@/components/ui/modal";
 
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
@@ -46,11 +46,8 @@ const UserRegisterView = ({ isOpen, setIsOpen }) => {
   });
 
   return (
-    <Modal isOpen={isOpen} onClose={() => closeModal('topRight')} title="Top right modal">
+    <Modal isOpen={isOpen} onClose={() => closeModal('topRight')} title="Sign Up"  className={'max-w-md'}>
       <div className='flex justify-between items-center w-full flex-col  '>
-        <h1 className=' font-bold text-gray-600 text-2xl'>
-          Sign Up
-        </h1>
         <RHFFormProvider methods={methods} onSubmit={onSubmit}>
           <div className=' w-full' >
             <RHFTextInput

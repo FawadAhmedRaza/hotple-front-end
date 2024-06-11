@@ -10,7 +10,6 @@ import SolidButton from '@/components/ui/Buttons/solid-button';
 import RHFTextInput from '@/components/rhf-hooks/RHFTextfiels';
 import { useAuthContext } from '@/context/auth/useAuthContext';
 import { createNewPost } from '@/api/post';
-
 const PostCreateView = () => {
   const {user} = useAuthContext();
   console.log("context in create post view",user)

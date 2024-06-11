@@ -38,9 +38,9 @@ const BottomBar = () => {
     return (
         <Div className='fixed bottom-0 flex justify-around  sm:justify-between lg:hidden w-full !py-4'>
             {tabs?.map((tab, index) => (
-                <div className="flex items-center gap-3 cursor-pointer" onClick={() => setActiveTab(tab?.title)}>
-                    <Iconify icon={tab?.icon} className={` ${  tab?.title === activeTab ? 'dark:!text-dark_primary_label !text-light_primary_label ' : ' dark:!text-dark_secondary_label  !text-light_tertiary_label '}`} />
-                    <H5 className={`!hidden sm:!block !font-medium !text-light_tertiary_label ${activeTab == tab?.title ? '!text-light_primary_label ' : ''}`}>{tab?.title}</H5>
+                <div key={index} className="flex items-center gap-3 cursor-pointer" onClick={() => setActiveTab(tab?.title)}>
+                    <Iconify icon={tab?.icon} className={` ${  tab?.title === activeTab ? 'dark:!text-dark_primary_label !text-light_primary_label ' : ' dark:!text-dark_tertiary_label  !text-light_tertiary_label '}`} />
+                    <H5 className={`!hidden sm:!block !font-medium ${activeTab == tab?.title ? '!text-light_primary_label dark:!text-dark_primary_label' : 'dark:!text-dark_tertiary_label !text-light_tertiary_label '}`}>{tab?.title}</H5>
                 </div>
             ))}
         </Div>

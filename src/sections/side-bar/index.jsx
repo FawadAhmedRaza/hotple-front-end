@@ -66,7 +66,7 @@ const SideBar = () => {
         {/* Tabs div  */}
         <div className="flex flex-col gap-2 ">
           {tabs?.map((tab, index) => (
-            <IconButton icon={tab?.icon} iconClass={' !w-22wd '} className={` ${tab.title == activeTab ? 'dark:bg-dark_bg_grey bg-light_bg_grey' : ''}`} onClick={() => setActiveTab(tab.title)}>{tab?.title}</IconButton>
+            <IconButton key={index} icon={tab?.icon} iconClass={' !w-22wd '} className={` ${tab.title == activeTab ? 'dark:bg-dark_bg_grey bg-light_bg_grey' : ''}`} onClick={() => setActiveTab(tab.title)}>{tab?.title}</IconButton>
           ))}
         </div>
         <div className="flex flex-col gap-3 ">
@@ -74,7 +74,7 @@ const SideBar = () => {
           <div className="flex flex-col gap-1 border dark:text-dark_primary_label dark:border-neutral-800 border-neutral-200 rounded-2xl px-4 py-2.5 ">
             <H6 className={'mb-1 dark:!text-dark_secondary_label !text-light_secondary_label'}>马上登录即可</H6>
             {loginData?.map((item, index) => (
-              <div className='flex gap-2 items-center'>
+              <div key={index} className='flex gap-2 items-center'>
                 <Iconify icon={item.icon} className={'!w-4 !h-4 dark:text-dark_tertiary_label text-neutral-500  '} />
                 <H6 className={'dark:!text-dark_tertiary_label !text-neutral-500 '}>{item.title}</H6>
               </div>
