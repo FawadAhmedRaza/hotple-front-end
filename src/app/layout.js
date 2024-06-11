@@ -1,11 +1,8 @@
 import "./globals.css";
-import Header from "@/components/sections/header";
-
-import dynamic from "next/dynamic";
+import Header from "@/sections/header";
 import { AuthProvider } from "@/context/auth/AuthContext";
-
-import SideBar from '@/components/sections/side-bar'
-import BottomBar from '@/components/sections/bottom-bar'
+import SideBar from '@/sections/side-bar'
+import BottomBar from '@/sections/bottom-bar'
 import { ThemeProvider } from "@/providers/theme-provider";
 
 export const metadata = {

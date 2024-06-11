@@ -1,13 +1,13 @@
 "use client"
 import React from 'react'
-import RHFTextInput from "@/components/inputs/RHFTextfiels";
+import RHFTextInput from "@/components/rhf-hooks/RHFTextfiels";
 import Modal from "@/components/modal";
 
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import { useForm } from "react-hook-form";
 import SolidButton from "@/components/ui/Buttons/solid-button";
-import RHFFormProvider from "@/components/inputs/Form";
+import RHFFormProvider from "@/components/rhf-hooks/Form";
 import { LoginUser } from "@/api/auth";
 import { jwtDecode } from 'jwt-decode';
 import { useAuthContext } from '@/context/auth/useAuthContext';
