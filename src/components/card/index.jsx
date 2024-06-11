@@ -21,7 +21,7 @@ const Card = ({ data }) => {
         <div className='flex flex-col gap-3 '>
             {/* Image  */}
             <div className=' relative group cursor-pointer' onMouseEnter={handleHover}>
-                <Image src={data?.img} alt={data?.title} ref={imgRef} className=' w-full max-h-72 rounded-2xl hover:bg-opacity-60  ' />
+                <Image src={data?.img} alt={data?.title} ref={imgRef} width={72} height={72} className=' w-full max-h-72 rounded-2xl hover:bg-opacity-60  ' />
                 <div className={`absolute top-0  hidden group-hover:block bg-light_quaternary_label rounded-2xl`} style={{ width: `${imageWidth}px`, height: `${imageHeight}px` }}>
                 </div>
             </div>

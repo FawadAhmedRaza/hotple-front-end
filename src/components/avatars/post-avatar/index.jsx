@@ -3,8 +3,9 @@ import React from 'react'
 
 const PostAvatar = ({ img }) => {
     return (
-            <Image src={img} alt='avatar' className=' rounded-full w-5 h-5'/>
+            <Image src={img} alt='avatar' width={20} height={10} className=' rounded-full '/>
     )
 }
 
 export default PostAvatar
+
