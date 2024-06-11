@@ -10,6 +10,6 @@ const IconButton = ({ className, children, icon, iconClass, onClick }) => {
             <span className=' !leading-4 mb-[3px]'>{children}</span>
         </button>
     )
-}
+} 
 
 export default IconButton

@@ -7,7 +7,7 @@ import Button from '@/components/ui/Buttons/button'
 import SearchInput from '@/components/search-input'
 import BgIcon from '@/components/ui/Iconify-icons/bg-icon'
 import HoverDropdownButton from '@/components/ui/Buttons/button-with-dropdown'
-
+import DropdownMenu from '@/components/dropdown-menu'
 
 const Header = () => {
 
@@ -20,20 +20,20 @@ const Header = () => {
             id: '1',
             label: '创作服务',
             icon: 'majesticons:arrow-right-line',
-            link:"",
+            link: "",
         },
         {
             id: '1',
             label: '直播管理',
             icon: 'majesticons:arrow-right-line',
-            link:"",
+            link: "",
 
         },
         {
             id: '1',
             label: '电脑直播助手',
             icon: 'majesticons:arrow-right-line',
-            link:"",
+            link: "",
 
         },
     ]
@@ -43,38 +43,38 @@ const Header = () => {
             id: '1',
             label: '专业号',
             icon: 'majesticons:arrow-right-line',
-            link:"",
+            link: "",
 
         },
         {
             id: '2',
             label: '推广合作',
             icon: 'majesticons:arrow-right-line',
-            link:"",
+            link: "",
 
         },
         {
             id: '3',
             label: ' 蒲公英',
             icon: 'majesticons:arrow-right-line',
-            link:"",
+            link: "",
         },
         {
             id: '4',
             label: ' 商家入驻',
             icon: 'majesticons:arrow-right-line',
-            link:'',
+            link: '',
         },
         {
             id: '5',
             label: ' MCN入驻',
             icon: 'majesticons:arrow-right-line',
-            link:'',
+            link: '',
         },
     ]
 
     return (
-        <Div className={'fixed top-0 flex justify-between items-center gap-2 sm:gap-0 w-full z-50'}>
+        <Div className={'fixed top-0 flex justify-between items-center gap-2 sm:gap-0 w-full z-[45]'}>
             {/* logo  */}
             <Link href={'/'}>
                 <Logo className={` ${activeSearchBar ? 'hidden' : ' block'}`} />
@@ -93,13 +93,15 @@ const Header = () => {
 
             {/* NavBar Icon  */}
 
-            <div className=" flex lg:hidden gap-2 ">
+            <div className=" flex lg:hidden gap-2 ">    
                 {!activeSearchBar && <BgIcon icon={'lucide:search'} className={'flex sm:hidden'} onClick={() => ssetActiveSearchBar(!activeSearchBar)} />}
                 {
                     activeSearchBar ? (
                         <Button className={' !text-nowrap'} onClick={() => ssetActiveSearchBar(!activeSearchBar)} >取消</Button>
                     ) : (
-                        <BgIcon icon={'fluent:navigation-24-filled'} />
+                        <DropdownMenu className={' !top-10 h-min !-ml-52 !w-60 sm:!w-64 !overflow-hidden'}>
+                            <BgIcon icon={'fluent:navigation-24-filled'} />
+                        </DropdownMenu>
                     )
                 }
             </div>
