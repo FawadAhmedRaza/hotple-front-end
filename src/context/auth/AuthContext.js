@@ -1,4 +1,5 @@
 'use client'
+import { jwtDecode } from "jwt-decode";
 import { createContext, useEffect, useReducer, useCallback } from "react";
 import { useState } from "react";
 
@@ -13,6 +14,7 @@ const initialState = {
 };
 const reducer = (state, action) => {
   if (action.type === "INITIAL") {
+   
     return {
       user: action.payload.user,
       isAuthenticated: action.payload.isAuthenticated,
@@ -24,8 +26,9 @@ const reducer = (state, action) => {
       ...state,
       isAuthenticated: true,
       user: user,
-    };
-  }
+      };
+
+      }
   if (action.type === "REGISTER") {
     return {
       ...state,
@@ -60,6 +63,22 @@ export const AuthContext = createContext(null);
 export function AuthProvider({ children }) {
   const [state, dispatch] = useReducer(reducer, initialState);
   const [loading, setLoading] = useState(false);
+  console.log("state in main function",state)
+  useEffect(() => {
+    const token = localStorage.getItem("jwtToken")
+    if (token) {
+      const user = jwtDecode(token);
+      console.log("user in main home", user)
+      dispatch({
+        type: "INITIAL",
+        payload: {
+          user,
+          isAuthenticated: true,
+        }
+      })
+    }
+  }, [])
+
 
   return (
     <AuthContext.Provider

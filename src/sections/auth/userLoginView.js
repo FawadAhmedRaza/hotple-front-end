@@ -64,7 +64,6 @@ const UserLoginView = ({isOpen,setIsOpen}) => {
           <RHFTextInput
             name="email"     
             placeholder="email"
-      
           />
           <RHFTextInput
              name="password"        
