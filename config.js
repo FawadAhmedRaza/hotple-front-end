@@ -1,0 +1,1 @@
+export const HOST_API_KEY = "http://192.168.100.7:3000/api";
