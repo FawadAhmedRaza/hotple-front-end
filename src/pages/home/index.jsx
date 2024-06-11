@@ -9,6 +9,7 @@ import DynamicSlider from '@/components/slider'
 import { useAuthContext } from "@/context/auth/useAuthContext";
 import UserRegisterView from "@/sections/auth/userRegisterView";
 import UserLoginView from "@/sections/auth/userLoginView";
+import Explore from '../explore'
 
 
 const Home = () => {
@@ -26,20 +27,12 @@ const Home = () => {
     }
   }, [isAuthenticated]); // Depend on isAuthenticated to trigger the effect
   return (
-    <div className='flex gap-3 flex-col-reverse lg:flex-row w-full h-screen border border-yellow-300 pt-16'>
+    <div className='lg:pt-16'>
         {/* <UserRegisterView isOpen={isOpen} setIsOpen={setIsOpen}  /> */}
         <UserLoginView isOpen={isOpen} setIsOpen={setIsOpen} />
-        <SideBar />
+   
+    <Explore/>
 
-        {/* // Card sections */}
-        <section>
-          <Card img={Img} userImg={Img} userName={'瘦弱小鱼'} title={'瘦弱小鱼😅'} />
-        </section>
-        
-        {/* bottom bar  */}
-        <BottomBar />
-
-  
       </div>
 
   )
