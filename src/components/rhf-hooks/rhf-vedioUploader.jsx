@@ -2,7 +2,7 @@
 import { useFormContext, Controller } from 'react-hook-form';
 import Upload from '../upload/upload';
 
-export function RHFUpload({ name, multiple, helperText,className, ...other }) {
+export function RHFVedioUpload({ name, multiple, helperText,className, ...other }) {
   const { control } = useFormContext();
 
   return (
@@ -14,7 +14,7 @@ export function RHFUpload({ name, multiple, helperText,className, ...other }) {
           <Upload
           className={className}
             multiple
-            accept={{ 'image/*': [] }}
+            accept={{ 'video/*': [] }}
             files={field.value}
             error={!!error}
             helperText={
@@ -29,7 +29,7 @@ export function RHFUpload({ name, multiple, helperText,className, ...other }) {
         ) : (
           <Upload
           className={className}
-          accept={{ 'image/*': [],}}
+          accept={{ 'video/*': []}}
             file={field.value}
             error={!!error}
             helperText={

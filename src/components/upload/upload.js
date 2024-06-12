@@ -17,7 +17,7 @@ export default function Upload({
   onUpload,
   onRemove,
   onRemoveAll,
-  sx,
+  className,
   ...other
 }) {
   const { getRootProps, getInputProps, isDragActive, isDragReject, fileRejections } = useDropzone({
@@ -34,11 +34,11 @@ export default function Upload({
   const renderPlaceholder = (
     <div className="flex flex-col items-center justify-center space-y-3">
       <div className="text-center space-y-1">
-        <h6 className="text-lg">Drop or Select file</h6>
+        <h6 className="text-lg">파일 삭제 또는 선택</h6>
         <p className="text-sm text-gray-500">
-          Drop files here or click
-          <span className="mx-1 text-blue-600 underline">browse</span>
-          through your machine
+        여기에 파일을 놓거나 클릭하세요.
+          <span className="mx-1 text-blue-600 underline">검색</span>
+          당신의 기계를 통해
         </p>
       </div>
     </div>
@@ -87,18 +87,18 @@ export default function Upload({
   );
 
   return (
-    <div className={`relative mb-2  w-full ${sx} `}>
+    <div className={`relative mb-2  w-full ${className} `}>
       <div
         {...getRootProps()}
-        className={`p-10 cursor-pointer overflow-hidden relative dark:bg-brown bg-gray-100 border border-dashed transition-opacity rounded-lg ${isDragActive ? 'opacity-70' : ''} ${disabled ? 'opacity-50 pointer-events-none' : ''} ${hasError ? 'text-red-600 border-red-600 bg-red-50' : ''} ${hasFile ? 'py-24' : ''}`}
+        className={`p-10 flex justify-center items-center  cursor-pointer overflow-hidden relative dark:bg-brown bg-gray-100 border border-dashed transition-opacity rounded-lg ${isDragActive ? 'opacity-70' : ''} ${disabled ? 'opacity-50 pointer-events-none' : ''} ${hasError ? 'text-red-600 border-red-600 bg-red-50' : ''} ${hasFile ? 'py-24' : ''} ${className}`}
       >
         <input {...getInputProps()} />
-        {hasFile ? renderSinglePreview : renderPlaceholder}
+        { renderPlaceholder}
       </div>
-      {removeSinglePreview}
+      {/* {removeSinglePreview} */}
       {helperText && <p className="text-sm text-gray-500 mt-2">{helperText}</p>}
       <RejectionFiles fileRejections={fileRejections} />
-      {renderMultiPreview}
+      {/* {renderMultiPreview} */}
     </div>
   );
 }
