@@ -83,8 +83,8 @@ const PostCreateView = () => {
    }
   })
   return (
-    <div className='h-screen w-screen flex justify-center items-center'>
-      <div className='p-2 bg-white shadow-lg'>
+    <div className=' flex justify-center items-center'>
+      <div className='p-2 dark:bg-brownish_black bg-white shadow-lg'>
         <RHFFormProvider methods={methods} onSubmit={onsubmit}>
         <RHFTextInput
               name="description"

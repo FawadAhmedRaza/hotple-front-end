@@ -6,6 +6,7 @@ import { AuthProvider } from "@/context/auth/AuthContext";
 
 
 import { ThemeProvider } from "@/providers/theme-provider";
+import MainLayout from "@/layouts/main-layout";
 
 export const metadata = {
   title: "小红书-您的生活指南",
