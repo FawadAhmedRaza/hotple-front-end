@@ -1,9 +1,9 @@
-
 import React from "react";
 import { Controller, useFormContext } from "react-hook-form";
 
-const RHFTextInput = ({ name, placeholder, type, className,label }) => {
+const RHFTextInput = ({ name, placeholder, type, className, label }) => {
   const { control } = useFormContext();
+  
   return (
     <div className=" w-full">
       <Controller
@@ -11,7 +11,7 @@ const RHFTextInput = ({ name, placeholder, type, className,label }) => {
         control={control}
         render={({ field, fieldState: { error } }) => (
           <>
-             <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+            <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
               {label}
             </label>
             <input
@@ -21,13 +21,15 @@ const RHFTextInput = ({ name, placeholder, type, className,label }) => {
               {...field}
               value={field.value}
               onChangeText={(value) => onChange(value)}
-              onChange={(e) => { field.onChange(e.target.value) }} 
+              onChange={(e) => {
+                field.onChange(e.target.value);
+              }}
               type={type}
             />
             {error && <p className="text-red text-sm  px-2">{error.message}</p>}
           </>
-        )} 
-      />
+        )}
+      />  
     </div>
   );
 };

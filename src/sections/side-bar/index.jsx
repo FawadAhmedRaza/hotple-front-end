@@ -1,17 +1,16 @@
-'use client'
-import React, { useState } from 'react'
-import IconButton from '@/components/ui/Buttons/icon-button'
-import SolidButton from '@/components/ui/Buttons/solid-button'
-import Iconify from '@/components/ui/Iconify-icons/Iconify'
-import H6 from '@/components/ui/Typography/h6'
-import Div from '@/components/ui/div'
-import DropdownMenu from '@/components/dropdown-menu'
-import Link from 'next/link'
-
+"use client";
+import React, { useState } from "react";
+import IconButton from "@/components/ui/Buttons/icon-button";
+import SolidButton from "@/components/ui/Buttons/solid-button";
+import Iconify from "@/components/ui/Iconify-icons/Iconify";
+import H6 from "@/components/ui/Typography/h6";
+import Div from "@/components/ui/div";
+import DropdownMenu from "@/components/dropdown-menu";
+import Link from "next/link";
 
 const SideBar = () => {
-  const [activeTab, setActiveTab] = useState('发现')
-  // Data 
+  const [activeTab, setActiveTab] = useState("发现");
+  // Data
 
   const tabs = [
     {
@@ -38,7 +37,13 @@ const SideBar = () => {
       icon: 'ci:bell',
       link: '/user/post/new',
     },
-  ]
+    {
+      id: "4",
+      title: "장소",
+      icon: "f7:placemark",
+      link: "/place",
+    },
+  ];
 
   const loginData = [
     {
@@ -61,14 +66,12 @@ const SideBar = () => {
       title: '다른 사람들과 더 잘 소통하고 소통하세요.',
       icon: 'basil:comment-outline',
     },
-  ]
+  ];
 
-  
   ///----- Functions ------------- ///
 
-
   return (
-    <Div className=' fixed hidden lg:flex flex-col justify-between w-270wd xl:!px-4 pb-4 pt-24 -mt-1  h-screen z-[35] '>
+    <Div className=" fixed hidden lg:flex flex-col justify-between w-270wd xl:!px-4 pb-4 pt-24 -mt-1  h-screen z-[35] ">
       <div className="flex flex-col gap-2">
         {/* Tabs div  */}
         <div className="flex flex-col gap-2 ">
@@ -83,14 +86,21 @@ const SideBar = () => {
           <div className="flex flex-col gap-1 border dark:text-dark_primary_label dark:border-neutral-800 border-neutral-200 rounded-2xl px-4 py-2.5 ">
             <H6 className={'mb-1 dark:!text-dark_secondary_label !text-light_secondary_label'}>지금 로그인하십시오</H6>
             {loginData?.map((item, index) => (
-     
-                    <div key={index} className='flex gap-2 items-center'>
-              
-              <Iconify icon={item.icon} className={'!w-4 !h-4 dark:text-dark_tertiary_label text-neutral-500  '} />
-              <H6 className={'dark:!text-dark_tertiary_label !text-neutral-500 '}>{item.title}</H6>
-            </div>
-              
-        
+              <div key={index} className="flex gap-2 items-center">
+                <Iconify
+                  icon={item.icon}
+                  className={
+                    "!w-4 !h-4 dark:text-dark_tertiary_label text-neutral-500  "
+                  }
+                />
+                <H6
+                  className={
+                    "dark:!text-dark_tertiary_label !text-neutral-500 "
+                  }
+                >
+                  {item.title}
+                </H6>
+              </div>
             ))}
           </div>
         </div>
@@ -101,7 +111,7 @@ const SideBar = () => {
         </DropdownMenu>
       </div>
     </Div>
-  )
-}
+  );
+};
 
-export default SideBar
+export default SideBar;
