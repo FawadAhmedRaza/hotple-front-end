@@ -1,0 +1,31 @@
+export const placesTypes = [
+  { label: "식당", value: "Restaurant" },
+  { label: "술집", value: "Bar" },
+  { label: "카페", value: "Cafe" },
+  { label: "공원", value: "Park" },
+  { label: "박물관", value: "Museum" },
+  { label: "다른", value: "Other" },
+];
+
+export const topicsOfCovers = [
+  { title: "기념일 축하" },
+  { title: "팀 소개" },
+  { title: "동기부여 명언" },
+  { title: "비하인드 씬" },
+  { title: "고객 후기" },
+  { title: "제품 팁 & 트릭" },
+  { title: "설문 조사" },
+  { title: "시즌 인사" },
+  { title: "신제품 출시" },
+  { title: "특별 할인" },
+  { title: "커뮤니티 행사" },
+  { title: "자선 지원" },
+  { title: "재미있는 사실" },
+  { title: "퀴즈 질문" },
+  { title: "DIY 튜토리얼" },
+  { title: "산업 뉴스" },
+  { title: "다가오는 행사" },
+  { title: "성공 사례" },
+  { title: "직원 스포트라이트" },
+  { title: "사용자 생성 콘텐츠" },
+];

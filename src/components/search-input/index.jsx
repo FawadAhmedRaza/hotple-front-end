@@ -13,7 +13,7 @@ const SearchInput = () => {
     }
     return (
         <div className=' flex justify-between dark:bg-dark_bg_grey bg-light_bg_grey rounded-full px-3.5 py-2 w-full '>
-            <input type="text" placeholder='登录以探索更多' value={search} className=' grow outline-none text-base leading-5 bg-transparent' onChange={(e) => handleSearch(e.target.value)} />
+            <input type="text" placeholder='登录以探索更多' value={search} className=' grow outline-none text-base leading-5 bg-transparent dark:placeholder:text-neutral-500' onChange={(e) => handleSearch(e.target.value)} />
             <div className='flex gap-4 items-center'>
                 {
                     search.length > 0 ? (

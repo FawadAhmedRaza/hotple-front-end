@@ -63,12 +63,12 @@ export const AuthContext = createContext(null);
 export function AuthProvider({ children }) {
   const [state, dispatch] = useReducer(reducer, initialState);
   const [loading, setLoading] = useState(false);
-  console.log("state in main function",state)
+
   useEffect(() => {
     const token = localStorage.getItem("jwtToken")
     if (token) {
       const user = jwtDecode(token);
-      console.log("user in main home", user)
+      
       dispatch({
         type: "INITIAL",
         payload: {
