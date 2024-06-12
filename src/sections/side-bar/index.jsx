@@ -61,7 +61,7 @@ const SideBar = () => {
 
 
   return (
-    <Div className=' fixed hidden lg:flex flex-col justify-between w-270wd xl:!px-4 pb-4 pt-[86px] h-screen z-40 '>
+    <Div className=' fixed hidden lg:flex flex-col justify-between w-270wd xl:!px-4 pb-4 pt-24 -mt-1  h-screen z-[35] '>
       <div className="flex flex-col gap-2">
         {/* Tabs div  */}
         <div className="flex flex-col gap-2 ">

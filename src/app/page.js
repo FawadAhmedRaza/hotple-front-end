@@ -7,7 +7,6 @@ import { jwtDecode } from "jwt-decode";
 
 export default function MainHome() {
   const { dispatch } = useAuthContext();
-  const { isAuthenticated, user } = useAuthContext();
   const [isCheckingAuth, setIsCheckingAuth] = useState(true);
 
   useEffect(() => {
