@@ -14,10 +14,10 @@ const SideBar = () => {
 
   const tabs = [
     {
-      id: "1",
-      title: "发现",
-      icon: "solar:home-smile-linear",
-      link: "/user/post/new",
+      id: '1',
+      title: '发现',
+      icon: 'solar:home-smile-linear',
+      link: '/authenticated/user/post/new',
     },
     {
       id: "2",

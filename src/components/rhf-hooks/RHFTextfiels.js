@@ -15,6 +15,7 @@ const RHFTextInput = ({ name, placeholder, type, className, label }) => {
               {label}
             </label>
             <input
+              autoComplete="none"
               className={` px-4 py-2.5 dark:bg-brown bg-light_bg_grey  rounded-full focus:outline-none w-full placeholder:dark:text-neutral-500 ${className}`}
               placeholder={placeholder}
               {...field}
