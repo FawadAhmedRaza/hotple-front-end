@@ -12,7 +12,7 @@ export function RHFUpload({ name, multiple, helperText,className, ...other }) {
       render={({ field, fieldState: { error } }) =>{
         return   multiple ? (
           <Upload
-          className={className}
+            className={className}
             multiple
             accept={{ 'image/*': [] }}
             files={field.value}
