@@ -104,15 +104,15 @@ const UserLoginView = ({ isOpen, setIsOpen }) => {
           </div> 
         </div>
 
-        <div className='flex justify-between items-center flex-col w-full py-1 md:py-10 md:px-7 '>
+        <div className='flex justify-between items-center flex-col w-full py-1 md:py-10 md:px-7 h-full'>
 
-          <div className={` flex items-center justify-between w-full mb-6 md:mb-0 md:pb-5 md:-mt-8 `}>
+          <div className={` flex items-center justify-between w-full mb-6 md:mb-0 md:pb-5 md:-mt-10 `}>
             <Paragraph className={" dark:!text-dark_primary_label !font-black grow !text-center "}>휴대폰번호로 로그인</Paragraph>
             <BgIcon icon={'akar-icons:cross'} className={'md:!-mt-12'} IconclassName={'!w-4 !h-4 '} onClick={() => closeModal()} />
           </div>
 
           <RHFFormProvider methods={methods} onSubmit={onSubmit}>
-            <div className=' flex flex-col gap-3 md:gap-5 w-full' >
+            <div className=' flex flex-col gap-3  w-full' >
               <RHFTextInput
                 name="email"
                 placeholder="电子邮件"
@@ -124,14 +124,16 @@ const UserLoginView = ({ isOpen, setIsOpen }) => {
                 type="password"
                 className={'!py-3'}
               />
-              <div className='flex flex-col gap-4 md:mt-4'>
+            </div>
+            <div className='flex flex-col justify-between h-full'>
+              <div className='flex flex-col gap-4 md:mt-8'>
                 <SolidButton type="submit" className='w-full' >
                   登录
                 </SolidButton>
                 <CheckBox label='我已阅读并同意' anchorTag='《사용户协议》隐私政策》《儿童/青少年个人信息保护规则》' />
               </div>
-              <Span className={' dark:!text-dark_tertiary_label !text-light_secondary_label !text-center mt-6 -mb-2.5 '}>신규 사용자는 직접 로그인할 수 있습니다.</Span>
-            </div>
+              <Span className={' dark:!text-dark_tertiary_label !text-light_secondary_label !text-center mt-6  '}>신규 사용자는 직접 로그인할 수 있습니다.</Span>
+              </div> 
           </RHFFormProvider>
         </div>
       </div>
