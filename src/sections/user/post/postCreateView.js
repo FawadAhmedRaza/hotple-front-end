@@ -11,9 +11,9 @@ import RHFTextInput from '@/components/rhf-hooks/RHFTextfiels';
 import { useAuthContext } from '@/context/auth/useAuthContext';
 import { createNewPost } from '@/api/post';
 import RHFTextArea from '@/components/rhf-hooks/rhf-textarea';
+
 const PostCreateView = () => {
   const {user} = useAuthContext();
-  console.log("context in create post view",user)
 
   const NewProductSchema = Yup.object().shape({
     files: Yup.mixed().required( 'please Upload your containt'),
