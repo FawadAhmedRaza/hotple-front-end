@@ -102,7 +102,7 @@ const Explore = () => {
 
     return (
 
-        <Div className=' w-full flex flex-col -mt-2 '>
+        <Div className=' w-full flex flex-col -mt-2 lg:!px-0 lg:!pr-8 '>
 
             <div className=" hide-scrollbar fixed top-[60px] sm:top-16 lg:top-[70px] flex gap-2 items-center w-full h-20 dark:bg-custom_black bg-dark_primary_label z-30  pt-1 -ml-4 sm:ml-0 overflow-x-auto px-4 sm:px-0">
                 {
@@ -110,6 +110,7 @@ const Explore = () => {
                         <Button key={ind} className={` !text-nowrap ${activeCat === cat?.label ? ' dark:!bg-dark_bg_grey !bg-light_bg_grey ' : ''}`} onClick={() => setActiveCat(cat?.label)}>{cat?.label}</Button>
                     ))
                 }
+
             </div>
 
             <ExploreCards cardData={cardData} />

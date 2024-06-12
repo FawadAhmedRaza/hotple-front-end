@@ -69,13 +69,12 @@ const SideBar = () => {
 
   return (
     <Div className=' fixed hidden lg:flex flex-col justify-between w-270wd xl:!px-4 pb-4 pt-24 -mt-1  h-screen z-[35] '>
-      <div className="flex flex-col gap-2">
+      <div className="flex flex-col gap-2 w-full">
         {/* Tabs div  */}
-        <div className="flex flex-col gap-2 ">
+        <div className="flex flex-col gap-2 w-full">
           {tabs?.map((tab, index) => (
-            <Link href={tab?.link}>
-
-            <IconButton key={index} icon={tab?.icon} iconClass={' !w-22wd '} className={` ${tab.title == activeTab ? 'dark:bg-dark_bg_grey bg-light_bg_grey' : ''}`} onClick={() => setActiveTab(tab.title)}>{tab?.title}</IconButton>
+            <Link href={tab?.link} cl>
+            <IconButton key={index} icon={tab?.icon} iconClass={' !w-22wd '} className={` w-full ${tab.title == activeTab ? 'dark:bg-dark_bg_grey bg-light_bg_grey' : ''}`} onClick={() => setActiveTab(tab.title)}>{tab?.title}</IconButton>
             </Link>
           ))}
         </div>
