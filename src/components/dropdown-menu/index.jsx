@@ -132,9 +132,9 @@ const DropdownMenu = ({ children, className }) => {
                         {
                             showAboutData ? (
                                 <div className='flex flex-col  divide-y dark:divide-neutral-800 divide-gray-200  '>
-                                    <div className="flex items-center p-2 gap-12" >
+                                    <div className="flex items-center p-2 " >
                                         <BgIcon icon={'oui:arrow-left'} className={'!w-6 !h-6'} onClick={() => setShowAboutData(false)} />
-                                        <H6 className={'!font-semibold'}>关于小红书</H6>
+                                        <H6 className={'!font-semibold !text-center grow'}>关于小红书</H6>
                                     </div>
                                     <div className=' hide-scrollbar max-h-80 lg:max-h-96 divide-y dark:divide-neutral-800 divide-gray-200 overflow-y-auto '>
                                         <div className="flex flex-col py-1.5">
@@ -152,9 +152,9 @@ const DropdownMenu = ({ children, className }) => {
                                 </div>
                             ) : showCreativeData ? (
                                 <div className='flex  flex-col  divide-y dark:divide-neutral-800 divide-gray-200'>
-                                    <div className="flex items-center p-2 gap-12 " >
+                                    <div className="flex items-center p-2 " >
                                         <BgIcon icon={'oui:arrow-left'} className={'!w-6 !h-6'} onClick={() => setShowCreativesData(false)} />
-                                        <H6 className={'!font-semibold'}>隐私、协议</H6>
+                                        <H6 className={'!font-semibold !text-center grow'}>隐私、协议</H6>
                                     </div>
                                     <div className="flex flex-col">
                                         {
@@ -166,9 +166,9 @@ const DropdownMenu = ({ children, className }) => {
                                 </div>
                             ) : showBusinessData ? (
                                 <div className='flex flex-col  divide-y dark:divide-neutral-800 divide-gray-200'>
-                                    <div className="flex items-center p-2 gap-12 " >
+                                    <div className="flex items-center p-2  " >
                                         <BgIcon icon={'oui:arrow-left'} className={'!w-6 !h-6'} onClick={() => setShowBusinessData(false)} />
-                                        <H6 className={'!font-semibold'}>隐私、协议</H6>
+                                        <H6 className={'!font-semibold grow !text-center'}>隐私、协议</H6>
                                     </div>
                                     <div className="flex flex-col">
                                         {
@@ -180,9 +180,9 @@ const DropdownMenu = ({ children, className }) => {
                                 </div>
                             ) : showPrivacyData ? (
                                 <div className='flex flex-col divide-y dark:divide-neutral-800 divide-gray-200  '>
-                                    <div className="flex items-center p-2 gap-12 " >
+                                    <div className="flex items-center p-2 " >
                                         <BgIcon icon={'oui:arrow-left'} className={'!w-6 !h-6'} onClick={() => setShowPrivacyData(false)} />
-                                        <H6 className={'!font-semibold'}>隐私、协议</H6>
+                                        <H6 className={'!font-semibold grow !text-center'}>隐私、协议</H6>
                                     </div>
                                     <div className=' hide-scrollbar py-1.5 max-h-96 divide-y dark:divide-neutral-800 divide-gray-200 overflow-y-auto '>
                                         <div className="flex flex-col">
