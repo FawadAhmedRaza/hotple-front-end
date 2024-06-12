@@ -18,7 +18,7 @@ const SideBar = () => {
       id: '1',
       title: '发现',
       icon: 'solar:home-smile-linear',
-      link: '/user/post/new',
+      link: '/authenticated/user/post/new',
     },
     {
       id: '2',

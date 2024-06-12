@@ -87,10 +87,10 @@ export default function Upload({
   );
 
   return (
-    <div className={`relative w-full max-w-[400px] ${sx} `}>
+    <div className={`relative mb-2  w-full ${sx} `}>
       <div
         {...getRootProps()}
-        className={`p-10 cursor-pointer overflow-hidden relative bg-gray-100 border border-dashed transition-opacity rounded-lg ${isDragActive ? 'opacity-70' : ''} ${disabled ? 'opacity-50 pointer-events-none' : ''} ${hasError ? 'text-red-600 border-red-600 bg-red-50' : ''} ${hasFile ? 'py-24' : ''}`}
+        className={`p-10 cursor-pointer overflow-hidden relative dark:bg-brown bg-gray-100 border border-dashed transition-opacity rounded-lg ${isDragActive ? 'opacity-70' : ''} ${disabled ? 'opacity-50 pointer-events-none' : ''} ${hasError ? 'text-red-600 border-red-600 bg-red-50' : ''} ${hasFile ? 'py-24' : ''}`}
       >
         <input {...getInputProps()} />
         {hasFile ? renderSinglePreview : renderPlaceholder}

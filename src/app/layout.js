@@ -20,7 +20,6 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className="overflow-x-hidden dark:bg-custom_black bg-dark_primary_label">
         <AuthProvider>
-
           <ThemeProvider
             attribute="class"
             defaultTheme='light'
