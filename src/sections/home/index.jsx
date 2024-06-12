@@ -19,7 +19,7 @@ const Home = () => {
   
   return (
     
-    <div className='lg:pt-16'>
+    <div className=''>
       {/* <UserRegisterView isOpen={isOpen} setIsOpen={setIsOpen}  /> */}
       <UserLoginView isOpen={isOpen} setIsOpen={setIsOpen}  />
       
