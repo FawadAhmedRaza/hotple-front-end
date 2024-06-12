@@ -1,9 +1,8 @@
-
-import { useDropzone } from 'react-dropzone';
-import MultiFilePreview from './preview-multi-file';
-import RejectionFiles from './errors-rejection-files';
-import SingleFilePreview from './preview-single-file';
-import Iconify from '../ui/Iconify-icons/Iconify';
+import { useDropzone } from "react-dropzone";
+import MultiFilePreview from "./preview-multi-file";
+import RejectionFiles from "./errors-rejection-files";
+import SingleFilePreview from "./preview-single-file";
+import Iconify from "../ui/Iconify-icons/Iconify";
 
 export default function Upload({
   disabled,
@@ -20,12 +19,17 @@ export default function Upload({
   className,
   ...other
 }) {
-  const { getRootProps, getInputProps, isDragActive, isDragReject, fileRejections } = useDropzone({
+  const {
+    getRootProps,
+    getInputProps,
+    isDragActive,
+    isDragReject,
+    fileRejections,
+  } = useDropzone({
     multiple,
     disabled,
     ...other,
   });
-  console.log("file",file)
 
   const hasFile = !!file && !multiple;
   const hasFiles = !!files && multiple && !!files.length;
@@ -36,18 +40,20 @@ export default function Upload({
       <div className="text-center space-y-1">
         <h6 className="text-lg">파일 삭제 또는 선택</h6>
         <p className="text-sm text-gray-500">
-        여기에 파일을 놓거나 클릭하세요.
+          여기에 파일을 놓거나 클릭하세요.
           <span className="mx-1 text-blue-600 underline">검색</span>
           당신의 기계를 통해
         </p>
       </div>
     </div>
   );
-  const renderSinglePreview =(
   
-      <SingleFilePreview imgUrl={typeof file === 'string' ? file : file?.preview} />
-      );
- 
+  const renderSinglePreview = (
+    <SingleFilePreview
+      imgUrl={typeof file === "string" ? file : file?.preview}
+    />
+  );
+
   const removeSinglePreview = hasFile && onDelete && (
     <button
       type="button"
@@ -57,10 +63,15 @@ export default function Upload({
       <Iconify icon="mingcute:close-line" width={18} />
     </button>
   );
+
   const renderMultiPreview = hasFiles && (
     <>
       <div className="my-3 flex flex-wrap justify-start overflow-y-scroll max-h-60  ">
-        <MultiFilePreview files={files} thumbnail={thumbnail} onRemove={onRemove} />
+        <MultiFilePreview
+          files={files}
+          thumbnail={thumbnail}
+          onRemove={onRemove}
+        />
       </div>
       <div className="flex justify-end space-x-2 ">
         {onRemoveAll && (
@@ -90,10 +101,14 @@ export default function Upload({
     <div className={`relative mb-2  w-full ${className} `}>
       <div
         {...getRootProps()}
-        className={`p-10 flex justify-center items-center  cursor-pointer overflow-hidden relative dark:bg-brown bg-gray-100 border border-dashed transition-opacity rounded-lg ${isDragActive ? 'opacity-70' : ''} ${disabled ? 'opacity-50 pointer-events-none' : ''} ${hasError ? 'text-red-600 border-red-600 bg-red-50' : ''} ${hasFile ? 'py-24' : ''} ${className}`}
+        className={`p-10 flex justify-center items-center  cursor-pointer overflow-hidden relative dark:bg-brown bg-gray-100 border border-dashed transition-opacity rounded-lg ${
+          isDragActive ? "opacity-70" : ""
+        } ${disabled ? "opacity-50 pointer-events-none" : ""} ${
+          hasError ? "text-red-600 border-red-600 bg-red-50" : ""
+        } ${hasFile ? "py-24" : ""} ${className}`}
       >
         <input {...getInputProps()} />
-        { renderPlaceholder}
+        {renderPlaceholder}
       </div>
       {/* {removeSinglePreview} */}
       {helperText && <p className="text-sm text-gray-500 mt-2">{helperText}</p>}
@@ -102,4 +117,3 @@ export default function Upload({
     </div>
   );
 }
-

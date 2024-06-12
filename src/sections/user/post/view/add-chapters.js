@@ -4,7 +4,7 @@ import React from "react";
 const AddChapters = () => {
   return (
     <div className="grid grid-cols-8 gap-x-2 gap-y-2">
-      <div className="col-span-4 px-2 py-2 bg-gray-100 rounded-lg">
+      <div className="col-span-4 px-2 py-2 bg-gray-100 rounded-lg dark:bg-brown">
         <div className="flex justify-between items-center">
           <div>
             <span className="text-sm">챕터를 추가하여 비디오를 강조하세요</span>
@@ -20,7 +20,7 @@ const AddChapters = () => {
         </div>
       </div>
 
-      <div className="col-span-4 px-2 py-2 bg-gray-100 rounded-lg">
+      <div className="col-span-4 px-2 py-2 bg-gray-100 rounded-lg dark:bg-brown">
         <div className="flex justify-between items-center">
           <div>
             <span className="text-sm">영상에 사람과 위치를 표시하세요</span>

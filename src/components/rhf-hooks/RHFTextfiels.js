@@ -29,7 +29,7 @@ const RHFTextInput = ({ name, placeholder, type, className, label }) => {
             {error && <p className="text-red text-sm  px-2">{error.message}</p>}
           </>
         )}
-      />
+      />  
     </div>
   );
 };
