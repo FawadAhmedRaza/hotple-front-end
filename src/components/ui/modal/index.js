@@ -31,7 +31,7 @@ const Modal = ({ isOpen, onClose, children, title, className }) => {
  
   return (
     <div className="fixed  inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
-      <div ref={modalRef} className={`relative w-full sm:max-w-xl bg-white sm:rounded-xl shadow dark:bg-brownish_black   ${className}`}>
+      <div ref={modalRef} className={`relative w-full sm:max-w-xl bg-white sm:rounded-xl shadow dark:bg-brownish_black dark:border dark:border-neutral-800   ${className}`}>
         <div className=' flex items-center justify-between px-4 sm:px-5 py-3  border-b dark:border-neutral-800 border-gray-200 cursor-pointer '>
           <Paragraph className={" dark:!text-dark_primary_label font-semibold grow !text-center"}>{title}</Paragraph>
           <BgIcon icon={'akar-icons:cross'} IconclassName={'!w-4 !h-4'} onClick={() => onClose()} />
