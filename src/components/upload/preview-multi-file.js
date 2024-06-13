@@ -8,7 +8,6 @@ import Iconify from '../ui/Iconify-icons/Iconify';
 import { fData } from '@/utils/format-number';
 
 export default function MultiFilePreview({ thumbnail, files, onRemove, sx }) {
-  
   return (
     <AnimatePresence initial={false}>
       {files?.map((file) => {
@@ -20,7 +19,7 @@ export default function MultiFilePreview({ thumbnail, files, onRemove, sx }) {
             <m.div
               key={key}
               // {...varFade().inUp}
-              className="relative inline-flex flex-wrap items-center justify-center  m-1 w-20 h-20 rounded overflow-hidden border border-gray-300"
+              className="relative inline-flex flex-wrap items-center justify-center  m-1 w-20 h-20 rounded overflow-hidden border-gray-300"
               style={sx}
             >
               <FileThumbnail
@@ -35,7 +34,7 @@ export default function MultiFilePreview({ thumbnail, files, onRemove, sx }) {
                 <button
                   type="button"
                   className="absolute top-1 right-1 p-1 text-white bg-gray-300 bg-opacity-50 hover:bg-opacity-75 rounded"
-                  onClick={() => onRemove(file)}
+                  onClick={() => onRemove(file)}  
                 >
                   <Iconify icon="mingcute:close-line" width={14} />
                 </button>

@@ -3,6 +3,7 @@ import React, { useState, useRef, useEffect, useCallback } from "react";
 import { getUsers } from "@/api/user";
 
 import { topicsOfCovers } from "@/data"; // Assuming you have this file
+import { useFormContext } from "react-hook-form";
 
 const DescriptionPopover = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -12,6 +13,9 @@ const DescriptionPopover = () => {
   const textareaRef = useRef(null);
   const [users, setUsers] = useState([]);
 
+  const {setValue} = useFormContext();
+
+  
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (popoverRef.current && !popoverRef.current.contains(event.target)) {
@@ -40,7 +44,7 @@ const DescriptionPopover = () => {
   const handleTextareaChange = (event) => {
     const value = event.target.value;
     setTextareaValue(value);
-
+    setValue("description",value)
     if (value.includes("@")) {
       setPopoverType("users");
       setIsOpen(true);
@@ -51,6 +55,7 @@ const DescriptionPopover = () => {
       setIsOpen(false);
       setPopoverType("");
     }
+ 
   };
 
   const handleOptionClick = (value) => {

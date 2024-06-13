@@ -126,8 +126,8 @@ const UserLoginView = ({ isOpen, setIsOpen }) => {
               />
             </div>
             <div className='flex flex-col justify-between h-full'>
-              <div className='flex flex-col gap-4 md:mt-8'>
-                <SolidButton type="submit" className='w-full' >
+              <div className='flex flex-col gap-4 md:mt-8 mt-3'>
+                <SolidButton type="submit" loading={isSubmitting} className='w-full' >
                   登录
                 </SolidButton>
                 <CheckBox label='我已阅读并同意' anchorTag='《사용户协议》隐私政策》《儿童/青少年个人信息保护规则》' />

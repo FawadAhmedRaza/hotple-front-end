@@ -1,9 +1,13 @@
-import { axiosInstanceForFormData } from "@/utils/axios";
-import {CREATEPOST} from './constanse'
+import { axiosInstance, axiosInstanceForFormData } from "@/utils/axios";
+import {CREATEPOST, UPLOADMEDIA,} from './constanse'
  const createNewPost = async (body) => {
-const responce = await axiosInstanceForFormData.post(CREATEPOST, body);
+const responce = await axiosInstance.post(CREATEPOST, body);
+    return responce;
+}
+ const uploadMedia = async (body) => {
+const responce = await axiosInstanceForFormData.post(UPLOADMEDIA, body);
     return responce;
 }
 
 
-export {createNewPost}
+export {createNewPost,uploadMedia}

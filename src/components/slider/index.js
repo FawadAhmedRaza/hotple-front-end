@@ -23,7 +23,7 @@ const DynamicSlider = ({ posts }) => {
   );
 };
 
-const Carousel = ({ images }) => {
+export const Carousel = ({ images }) => {
   const [current, setCurrent] = useState(0);
 
   const handleNext = () => {
@@ -37,7 +37,7 @@ const Carousel = ({ images }) => {
   return (
     <div className="relative w-full">
       <img src={images[current]} alt={`Slide ${current}`} className="w-full h-auto" />
-      {images.length > 1 && (
+      {images?.length > 1 && (
         <>
           <button
             className="absolute top-1/2 left-0 transform -translate-y-1/2 bg-gray-800 text-white px-4 py-2"

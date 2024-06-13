@@ -98,10 +98,10 @@ export default function Upload({
   );
 
   return (
-    <div className={`relative mb-2  w-full ${className} `}>
+    <div className={`relative mb-2  w-full  ${className}  `}>
       <div
         {...getRootProps()}
-        className={`p-10 flex justify-center items-center  cursor-pointer overflow-hidden relative dark:bg-brown bg-gray-100 border border-dashed transition-opacity rounded-lg ${
+        className={`p-10  flex justify-center items-center    cursor-pointer overflow-hidden relative dark:bg-brown bg-gray-100 border border-dashed transition-opacity rounded-lg ${
           isDragActive ? "opacity-70" : ""
         } ${disabled ? "opacity-50 pointer-events-none" : ""} ${
           hasError ? "text-red-600 border-red-600 bg-red-50" : ""
