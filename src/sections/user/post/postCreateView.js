@@ -15,10 +15,10 @@ const PostCreateView = () => {
   const [hasChange, setHasChanged] = useState(false);
 
   const NewProductSchema = Yup.object().shape({
-    files: Yup.array().min(1, "Please upload your content"),
-    description: Yup.string().required("Description is required"),
-    title: Yup.string().required("Title is required"),
-    place: Yup.string().required("Place cannot be null"),
+    files: Yup.array().min(1, "콘텐츠를 업로드해주세요"),
+    description: Yup.string().required("설명은 필수입니다"),
+    title: Yup.string().required("제목은 필수 항목입니다"),
+    place: Yup.string().required("장소는 null일 수 없습니다"),
   });
 
   const methods = useForm({
@@ -29,10 +29,10 @@ const PostCreateView = () => {
   const files = watch("files");
 
   useEffect(() => {
-    if (files.length === 0) {
-      setHasChanged(false);
-    } else {
+    if (files && files.length > 0) {
       setHasChanged(true);
+    } else {
+      setHasChanged(false);
     }
   }, [files]);
 
@@ -63,8 +63,11 @@ const PostCreateView = () => {
     <div className="flex justify-center items-center">
       <div className="dark:bg-brownish_black bg-white rounded-lg w-full">
         <RHFFormProvider methods={methods} onSubmit={onsubmit}>
-          {!hasChange && <TabSection setValue={setValue} watch={watch} />}
-          {hasChange && <ReleaseSection />}
+          {!hasChange ? (
+            <TabSection setValue={setValue} watch={watch} />
+          ) : (
+            <ReleaseSection />
+          )}
         </RHFFormProvider>
       </div>
     </div>
