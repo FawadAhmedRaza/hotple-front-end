@@ -16,7 +16,7 @@ const ImgPreview = () => {
 
   const renderMultiPreview = files && (
     <>
-      <div className="my-3 flex flex-wrap justify-start overflow-y-scroll max-h-60">
+      <div className="my-3 flex flex-wrap justify-start overflow-y-visible max-h-60">
         <MultiFilePreview onRemove={(file) => removeFile(file)} files={files} />
       </div>
       <div className="flex justify-end space-x-2 "></div>

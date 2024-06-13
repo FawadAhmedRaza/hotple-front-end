@@ -13,10 +13,10 @@ export default function FileThumbnail({ file, tooltip, imageView, onDownload, sx
   const renderContent = (
     <Image
       src={preview}
-      height={50}
-      width={50}
+      height={100}
+      width={100}
       alt='image'
-      className="w-full h-full object-cover"
+      className="object-cover"
       style={{ ...imgSx }}
     />
   )
