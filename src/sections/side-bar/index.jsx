@@ -12,6 +12,7 @@ const SideBar = () => {
   const [activeTab, setActiveTab] = useState("发现");
   // Data
 
+  const placeId = "6669a66011cf926abd76c945"
   const tabs = [
     {
       id: '1',
@@ -31,12 +32,12 @@ const SideBar = () => {
       icon: 'ci:bell',
       link: 'user/post/new',
     },
-    // {
-    //   id: '4',
-    //   title: '대답',
-    //   icon: 'ci:bell',
-    //   link: '/user/post/new',
-    // },
+    {
+      id: '4',
+      title: '장소',
+      icon: 'ci:bell',
+      link: `/place/${placeId}`,
+    },
     {
       id: "4",
       title: "장소",

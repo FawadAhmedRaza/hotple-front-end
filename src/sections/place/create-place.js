@@ -11,5 +11,4 @@ const CreatePlace = () => {
     </div>
   );
 };
-
 export default CreatePlace;
