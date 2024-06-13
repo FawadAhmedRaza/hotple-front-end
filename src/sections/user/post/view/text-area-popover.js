@@ -37,7 +37,6 @@ const DescriptionPopover = () => {
   useEffect(() => {
     fetchUsers();
   }, []);
-
   const handleTextareaChange = (event) => {
     const value = event.target.value;
     setTextareaValue(value);
