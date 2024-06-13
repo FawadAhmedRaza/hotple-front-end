@@ -7,7 +7,7 @@ import React, { useEffect, useState } from 'react'
 
 const AuthGuard = ({ children }) => {
     const { user,isAuthenticated } = useAuthContext();
-    console.log("user,isAuthenticated",user,isAuthenticated)
+
     const [isOpen, setIsOpen] = useState(false);
     useEffect(() => {
         if (isAuthenticated) {

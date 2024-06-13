@@ -25,7 +25,7 @@ module.exports = {
         'dark_tertiary_label': 'hsla(0,0%,100%,0.6)',
         'dark_quaternary_label': 'hsla(0,0%,100%,0.3)',
         'dark_bg_grey': '#141414',
-        'dark_link_label': '#c7daef',
+        'dark_link_label': '#c7daef', 
 
         // utility
         'red': '#ff2e4d',
@@ -33,11 +33,12 @@ module.exports = {
         'custom_black': '#0A0A0A',
         'brown': "#212121",
         'brownish_black': '#181818',
+        'light_blue': "rgba(61,138,245,0.1)"
       },
       fontSize: {
         '26fs': "26px",
         '32fs': "32px",
-        '15fs': "15px",
+        '15fs': "15px", 
       },
       lineHeight: {
         '54lh': '54px',

@@ -22,7 +22,7 @@ const DropdownMenu = ({ children, className }) => {
     const [isCustomerServiesModalOpen, setIsCustomerServiesModalOpen] = useState(false)
     const dropdownRef = useRef(null);
 
-    console.log(isCustomerServiesModalOpen,'isCustomerServiesModalOpen');
+
     // Data 
     const aboutSubData = [
         { id: "1", label: "关于我们", link: '/' },

@@ -38,7 +38,7 @@ const CreatePlaceView = () => {
   const { handleSubmit } = methods;
 
   const onSubmit = handleSubmit(async (data) => {
-    console.log("data", data);
+
     setLoading(true);
     try {
       await createPlace(data);

@@ -17,13 +17,13 @@ const SideBar = () => {
       id: '1',
       title: '발견하다',
       icon: 'solar:home-smile-linear',
-      link: '/authenticated/user/post/new',
+      link: '',
     },
     {
       id: '2',
       title: '풀어 주다',
       icon: 'mynaui:plus-square',
-      link: '/user/post/new',
+      link: '',
     },
     {
       id: '3',
@@ -31,12 +31,12 @@ const SideBar = () => {
       icon: 'ci:bell',
       link: 'user/post/new',
     },
-    {
-      id: '4',
-      title: '대답',
-      icon: 'ci:bell',
-      link: '/user/post/new',
-    },
+    // {
+    //   id: '4',
+    //   title: '대답',
+    //   icon: 'ci:bell',
+    //   link: '/user/post/new',
+    // },
     {
       id: "4",
       title: "장소",
@@ -71,13 +71,13 @@ const SideBar = () => {
   ///----- Functions ------------- ///
 
   return (
-    <Div className=" fixed hidden lg:flex flex-col justify-between w-270wd xl:!px-4 pb-4 pt-24 -mt-1  h-screen z-[35] ">
-      <div className="flex flex-col gap-2">
+    <Div className=' fixed hidden lg:flex flex-col justify-between w-270wd xl:!px-4 pb-4 pt-24 -mt-1  h-screen z-[35] '>
+      <div className="flex flex-col gap-2 w-full">
         {/* Tabs div  */}
-        <div className="flex flex-col gap-2 ">
+        <div className="flex flex-col gap-2 w-full">
           {tabs?.map((tab, index) => (
-            <Link href={tab?.link}>
-            <IconButton key={index} icon={tab?.icon} iconClass={' !w-22wd '} className={` ${tab.title == activeTab ? 'dark:bg-dark_bg_grey bg-light_bg_grey' : ''}`} onClick={() => setActiveTab(tab.title)}>{tab?.title}</IconButton>
+            <Link href={tab?.link} >
+            <IconButton key={index} icon={tab?.icon} iconClass={' !w-22wd '} className={` w-full ${tab.title == activeTab ? 'dark:bg-dark_bg_grey bg-light_bg_grey' : ''}`} onClick={() => setActiveTab(tab.title)}>{tab?.title}</IconButton>
             </Link>
           ))}
         </div>
