@@ -10,22 +10,21 @@ import Div from "@/components/ui/div";
 
 
 export default function TabSection({ setValue, watch }) {
+  const VedioUploadeer = ({ setValue, watch }) => {
+    const values = watch();
+    const handleDrop = useCallback(
+      (acceptedFiles) => {
+        const files = values.files || [];
 
-    const VedioUploadeer = ({ setValue, watch }) => {
-        const values = watch();
-        const handleDrop = useCallback(
-            (acceptedFiles) => {
-                const files = values.files || [];
-
-                const newFiles = acceptedFiles.map((file) =>
-                    Object.assign(file, {
-                        preview: URL.createObjectURL(file),
-                    })
-                );
-                setValue('files', [...files, ...newFiles], { shouldValidate: true });
-            },
-            [setValue, values.files]
+        const newFiles = acceptedFiles.map((file) =>
+          Object.assign(file, {
+            preview: URL.createObjectURL(file),
+          })
         );
+        setValue("files", [...files, ...newFiles], { shouldValidate: true });
+      },
+      [setValue, values.files]
+    );
 
         const opreation = [
             { title: " 비디오 크기", descreption: "지원 시간은 60분입니다. 최대 20GB 비디오 크기 " },
@@ -65,11 +64,11 @@ export default function TabSection({ setValue, watch }) {
             (acceptedFiles) => {
                 const files = values.files || [];
 
-                const newFiles = acceptedFiles.map((file) =>
-                    Object.assign(file, {
-                        preview: URL.createObjectURL(file),
-                    })
-                );
+        const newFiles = acceptedFiles.map((file) =>
+          Object.assign(file, {
+            preview: URL.createObjectURL(file),
+          })
+        );
 
                 setValue('files', [...files, ...newFiles], { shouldValidate: true });
             },
@@ -110,18 +109,16 @@ export default function TabSection({ setValue, watch }) {
         )
     }
 
-    const tabs = [
-        {
-            label: '동영상 업로드',
-            content: <VedioUploadeer setValue={setValue} watch={watch} />
-            ,
-        },
-        {
-            label: '사진 게시',
-            content: <ImageUploadeer setValue={setValue} watch={watch} />,
-        },
-
-    ];
+  const tabs = [
+    {
+      label: "동영상 업로드",
+      content: <VedioUploadeer setValue={setValue} watch={watch} />,
+    },
+    {
+      label: "사진 게시",
+      content: <ImageUploadeer setValue={setValue} watch={watch} />,
+    },
+  ];
 
     return (
         <div className=" flex items-center justify-center h-full ">

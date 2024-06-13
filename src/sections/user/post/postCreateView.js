@@ -39,10 +39,10 @@ const PostCreateView = () => {
   const data = watch()
  
   useEffect(() => {
-    if (files.length === 0) {
-      setHasChanged(false);
-    } else {
+    if (files && files.length > 0) {
       setHasChanged(true);
+    } else {
+      setHasChanged(false);
     }
   }, [files]);
   const onsubmit = handleSubmit(async (data) => {
@@ -92,8 +92,11 @@ const PostCreateView = () => {
     <div className="flex justify-center items-center w-full h-full px-2">
       <div className=" dark:bg-brownish_black  bg-sky-100 h-full rounded-lg w-full">
         <RHFFormProvider methods={methods} onSubmit={onsubmit}>
-          {!hasChange && <TabSection setValue={setValue} watch={watch} />}
-          {hasChange && <ReleaseSection />}
+          {!hasChange ? (
+            <TabSection setValue={setValue} watch={watch} />
+          ) : (
+            <ReleaseSection />
+          )}
         </RHFFormProvider>
       </div>
     </div>

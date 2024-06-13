@@ -42,7 +42,7 @@ const SideBar = () => {
       id: "4",
       title: "장소",
       icon: "f7:placemark",
-      link: "/place",
+      link: "/place/new",
     },
   ];
 
