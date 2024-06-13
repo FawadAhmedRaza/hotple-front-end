@@ -1,25 +1,29 @@
-'use client'
-import { useFormContext, Controller } from 'react-hook-form';
-import Upload from '../upload/upload';
+"use client";
+import { useFormContext, Controller } from "react-hook-form";
+import Upload from "../upload/upload";
 
-export function RHFUpload({ name, multiple, helperText,className, ...other }) {
+export function RHFUpload({ name, multiple, helperText, className, ...other }) {
   const { control } = useFormContext();
 
   return (
     <Controller
       name={name}
       control={control}
-      render={({ field, fieldState: { error } }) =>{
-        return   multiple ? (
+      render={({ field, fieldState: { error } }) => {
+        return multiple ? (
           <Upload
-          className={className}
+            className={className}
             multiple
-            accept={{ 'image/*': [] }}
+            accept={{ "image/*": [] }}
             files={field.value}
             error={!!error}
             helperText={
               (!!error || helperText) && (
-                <p className={`px-2 text-sm ${error ? 'text-red' : 'text-gray-500'}`}>
+                <p
+                  className={`px-2 text-sm ${
+                    error ? "text-red" : "text-gray-500"
+                  }`}
+                >
                   {error ? error?.message : helperText}
                 </p>
               )
@@ -28,24 +32,25 @@ export function RHFUpload({ name, multiple, helperText,className, ...other }) {
           />
         ) : (
           <Upload
-          className={className}
-          accept={{ 'image/*': [],}}
+            className={className}
+            accept={{ "image/*": [] }}
             file={field.value}
             error={!!error}
             helperText={
               (!!error || helperText) && (
-                <p className={`px-2 text-sm ${error ? 'text-red-500' : 'text-gray-500'}`}>
+                <p
+                  className={`px-2 text-sm ${
+                    error ? "text-red-500" : "text-gray-500"
+                  }`}
+                >
                   {error ? error?.message : helperText}
                 </p>
               )
             }
             {...other}
           />
-        )
-      }
-      
-      }
+        );
+      }}
     />
   );
 }
-

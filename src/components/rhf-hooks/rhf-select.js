@@ -9,6 +9,7 @@ function CustomVendorSelect({
   options,
   disabled = false,
   className,
+  selectClass,
 }) {
   const [isOpen, setIsOpen] = useState(false);
   const selectRef = useRef(null);
@@ -54,7 +55,7 @@ function CustomVendorSelect({
             <ul
               id="option_div"
               style={{ scrollbarWidth: "thin" }}
-              className="flex flex-col gap-1 w-full p-2 border-[1.5px] bg-white rounded-xl absolute top-16 shadow-lg z-40 max-h-48 overflow-auto"
+              className={`flex flex-col gap-1 w-full p-2 border-[1.5px] bg-white dark:bg-brown rounded-xl absolute top-16 shadow-lg z-40 max-h-48 overflow-auto ${selectClass}`}
             >
               {options?.map((option, index) => (
                 <li
@@ -63,11 +64,11 @@ function CustomVendorSelect({
                     onChange(option.value, option.label);
                     toggleSelect();
                   }}
-                  className={`flex gap-2 align-center items-center h-8 px-3 py-2 rounded-lg hover:bg-neutral-100 cursor-pointer ${
+                  className={`flex gap-2 align-center items-center h-8 px-3 py-2 rounded-lg hover:bg-neutral-100 dark:hover:bg-slate cursor-pointer ${
                     value === option.value
-                      ? "bg-neutral-200"
+                      ? "bg-neutral-200 dark:bg-slate"
                       : index === 0 && !value
-                      ? "bg-neutral-200 hover:bg-neutral-200"
+                      ? "bg-neutral-200 dark:bg-slate dark:hover:bg-slate hover:bg-neutral-200"
                       : ""
                   }`}
                 >
