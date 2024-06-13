@@ -43,7 +43,7 @@ const PostCreateView = () => {
     formData.append("userId", user?.userId);
     try {
       const response = await createNewPost(formData);
-      console.log("response at sumbit upload", response);
+     
       if (response.status === 201) {
         reset();
       } else {

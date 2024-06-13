@@ -19,6 +19,7 @@ const KeyboardShortcutModal = ({ isOpen, setIsOpen }) => {
         setIsOpen(false);
     };
     return (
+        
         <Modal isOpen={isOpen} onClose={closeModal} title="键盘快捷键" className={'sm:!max-w-md'}>
             <div className='flex justify-between items-center  flex-col w-full divide-y dark:divide-neutral-800 divide-gray-200  '>
                 {

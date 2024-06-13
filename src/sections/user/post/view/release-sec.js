@@ -9,7 +9,7 @@ import ImgPreview from "./img-preview";
 const ReleaseSection = () => {
 
     const {watch} = useFormContext()
-    console.log(watch('files'));
+  
 
   return (
     <div className="mx-8">

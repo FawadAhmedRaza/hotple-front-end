@@ -1,7 +1,6 @@
 import Image from "next/image";
 export default function SingleFilePreview({ imgUrl}) {
-  console.log("imgUrl",imgUrl);
-  return (
+  
     <div className="absolute top-0 left-0 w-full h-full p-1">
       <Image
         alt="file preview"

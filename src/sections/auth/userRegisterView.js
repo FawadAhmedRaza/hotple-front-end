@@ -34,7 +34,7 @@ const UserRegisterView = ({ isOpen, setIsOpen }) => {
 
 
   const onSubmit = handleSubmit(async (data) => {
-    console.log("data", data)
+    
     try {
       const res = await registerNewUser(data)
       const user = res.data;

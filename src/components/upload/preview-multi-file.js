@@ -8,7 +8,7 @@ import Iconify from '../ui/Iconify-icons/Iconify';
 import { fData } from '@/utils/format-number';
 
 export default function MultiFilePreview({ thumbnail, files, onRemove, sx }) {
-  console.log("thumbnail,file",thumbnail,files)
+  
   return (
     <AnimatePresence initial={false}>
       {files?.map((file) => {

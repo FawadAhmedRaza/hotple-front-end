@@ -3,7 +3,7 @@ import { useEffect, useRef } from 'react';
 import BgIcon from '../Iconify-icons/bg-icon';
 import Paragraph from '../Typography/paragraph';
 
-const Modal = ({ isOpen, onClose, children, title, className }) => {
+const Modal = ({ isOpen, onClose, children, title, className, titleClass, contentClass}) => {
 
   const modalRef = useRef(null);
 
@@ -28,15 +28,15 @@ const Modal = ({ isOpen, onClose, children, title, className }) => {
 
   if (!isOpen) return null;
 
- 
   return (
     <div className="fixed  inset-0 !z-50 flex items-center justify-center bg-black bg-opacity-50">
-      <div ref={modalRef} className={`relative w-full sm:max-w-xl bg-white sm:rounded-xl shadow dark:bg-brownish_black dark:border dark:border-neutral-800   ${className}`}>
-        <div className=' flex items-center justify-between px-4 sm:px-5 py-3  border-b dark:border-neutral-800 border-gray-200 cursor-pointer '>
-          <Paragraph className={" dark:!text-dark_primary_label font-semibold grow !text-center"}>{title}</Paragraph>
+      <div ref={modalRef} className={` relative w-full sm:max-w-xl bg-white md:rounded-2xl shadow dark:bg-brownish_black dark:border dark:border-neutral-800   ${className}`}>
+        <div className={` flex items-center justify-between px-4 sm:px-5 py-3  border-b dark:border-neutral-800 border-gray-200 ${titleClass} `}>
+          <Paragraph className={" dark:!text-dark_primary_label font-semibold grow !text-center "}>{title}</Paragraph>
           <BgIcon icon={'akar-icons:cross'} IconclassName={'!w-4 !h-4'} onClick={() => onClose()} />
         </div>
-        <div className="flex justify-between items-center flex-row p-5 sm:p-6 space-y-4 ">
+ 
+        <div className={`flex justify-between items-center flex-row p-5 sm:p-6 ${contentClass} `}>
           {children}
         </div>
       </div>
