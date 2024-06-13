@@ -30,7 +30,7 @@ const SideBar = () => {
       id: '3',
       title: '통지하다',
       icon: 'ci:bell',
-      link: 'user/post/new',
+      link: '/user/post/new',
     },
     {
       id: '4',
