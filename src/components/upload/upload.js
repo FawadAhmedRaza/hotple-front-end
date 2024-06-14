@@ -30,11 +30,13 @@ export default function Upload({
     disabled,
     ...other,
   });
+  console.log(file)
 
   const hasFile = !!file && !multiple;
   const hasFiles = !!files && multiple && !!files.length;
   const hasError = isDragReject || !!error;
 
+  console.log({hasFile,hasFiles,hasError})
   const renderPlaceholder = (
     <div className="flex flex-col items-center justify-center space-y-3">
       <div className="text-center space-y-1">
@@ -47,7 +49,7 @@ export default function Upload({
       </div>
     </div>
   );
-  
+
   const renderSinglePreview = (
     <SingleFilePreview
       imgUrl={typeof file === "string" ? file : file?.preview}
@@ -83,16 +85,6 @@ export default function Upload({
             Remove All
           </button>
         )}
-        {/* {onUpload && (
-          <button
-            type="button"
-            className="px-3 py-1 bg-blue-600 text-white rounded flex items-center space-x-1"
-            onClick={onUpload}
-          >
-            <Iconify icon="eva:cloud-upload-fill" />
-            <span>Upload</span>
-          </button>
-        )} */}
       </div>
     </>
   );
@@ -108,12 +100,11 @@ export default function Upload({
         } ${hasFile ? "py-24" : ""} ${className}`}
       >
         <input {...getInputProps()} />
-        {renderPlaceholder}
+        {hasFile ? renderSinglePreview : renderPlaceholder}
       </div>
-      {/* {removeSinglePreview} */}
       {helperText && <p className="text-sm text-gray-500 mt-2">{helperText}</p>}
       <RejectionFiles fileRejections={fileRejections} />
-      {/* {renderMultiPreview} */}
+      {renderMultiPreview}
     </div>
   );
 }
