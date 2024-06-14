@@ -7,7 +7,7 @@ export const createPlace =async (data) => {
 }
 
 export const getAllPlaces = async () => {
-    const request = await axiosInstance.get({PLACES});
+    const request = await axiosInstance.get(PLACES);
     console.log("request",request.data)
     return request?.data;
 }

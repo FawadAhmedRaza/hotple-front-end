@@ -46,6 +46,12 @@ const SideBar = () => {
       icon: "f7:placemark",
       link: "/place/new",
     },
+    {
+      id: "6",
+      title: "이벤트",
+      icon: "mdi:events",
+      link: "/events",
+    },
   ];
 
   const loginData = [
@@ -110,7 +116,7 @@ const SideBar = () => {
       </div>
       <div className="mb-0">
         <DropdownMenu> 
-          <IconButton icon={'fluent:navigation-24-filled'} iconClass={'!w-5 !h-5'} className={'w-full'}>더 </IconButton>
+          <IconButton icon={'fluent:navigation-24-filled'} className={'w-full'} iconClass={'!w-5 !h-5'}>더 </IconButton>
         </DropdownMenu>
       </div>
     </Div>

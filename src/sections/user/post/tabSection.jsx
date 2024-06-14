@@ -15,7 +15,7 @@ export default function TabSection({ setValue, watch }) {
     const handleDrop = useCallback(
       (acceptedFiles) => {
         const files = values.files || [];
-
+        console.log("files uplado",files)
         const newFiles = acceptedFiles.map((file) =>
           Object.assign(file, {
             preview: URL.createObjectURL(file),
@@ -63,6 +63,7 @@ export default function TabSection({ setValue, watch }) {
         const handleDrop = useCallback(
             (acceptedFiles) => {
                 const files = values.files || [];
+                console.log("files uplado",files)
 
         const newFiles = acceptedFiles.map((file) =>
           Object.assign(file, {

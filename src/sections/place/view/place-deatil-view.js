@@ -27,11 +27,11 @@ const PlaceDetailView = ({id}) => {
     },[])
 
   return (
-    <div className='flex justify-between items-center flex-row'>
-    <div className='w-2/4'>
+    <div className='flex justify-start items-start flex-row'>
+    <div className=' w-full md:w-1/2 px-2'>
       <PlaceDetails place={place}/>
     </div>
-    <div className='sm:hidden md:hidden lg:block w-2/4 '>
+    <div className='hidden md:block w-full md:w-1/2 '>
       <MapView/>
     </div>
     </div>

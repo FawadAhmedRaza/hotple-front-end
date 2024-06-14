@@ -1,6 +1,6 @@
 import Image from "next/image";
-export default function SingleFilePreview({ imgUrl}) {
-  
+export default function SingleFilePreview({ imgUrl }) {
+  return (
     <div className="absolute top-0 left-0 w-full h-full p-1">
       <Image
         alt="file preview"
@@ -10,4 +10,5 @@ export default function SingleFilePreview({ imgUrl}) {
         className="w-full h-full rounded"
       />
     </div>
+  ;
 }

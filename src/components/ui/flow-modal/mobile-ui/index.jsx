@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react'
+import React, { useState,  useEffect } from 'react';
 import PostAvatar from '@/components/avatars/post-avatar';
 import H6 from '../../Typography/h6';
 import SolidButton from '../../Buttons/solid-button';
@@ -9,10 +9,47 @@ import Paragraph from '../../Typography/paragraph';
 import AnchotTag from '../../Typography/anchor-tag';
 import Iconify from '../../Iconify-icons/Iconify';
 import ImageSlider from '@/components/image-slider';
+import { postFlowComments } from '@/api/postFlowComments';
+import { useAuthContext } from '@/context/auth/useAuthContext';
+import { getFlowComments } from '@/api/getFlowComments';
+import { fDate } from '@/utils/format-time';
 import BgIcon from '../../Iconify-icons/bg-icon';
 
 
-const FlowModalMobile = ({ flowData, setIsFlowModalOpen }) => {
+const FlowModalMobile = ({ flowData , setIsFlowModalOpen }) => {
+    // States
+    const [hasScrolled, setHasScrolled] = useState(false);
+    const [postComment, setPostComment] = useState('');
+    const [comments, setComments] = useState([]);
+    const { user } = useAuthContext();
+
+    // Functions
+    const fetchUserComments = async (id) => {
+        try {
+            const flowComments = await getFlowComments(id);
+            setComments(flowComments);
+        } catch (err) {
+            console.log(err);
+        }
+    };
+    const handleCommit = async (e) => {
+        e.preventDefault();
+        try {
+            await postFlowComments(flowData?.id, {
+                userId: user?.userId,
+                content: postComment,
+            });
+            setPostComment('');
+            await fetchUserComments(flowData?.id);
+        } catch (err) {
+            console.log(err);
+        }
+    };
+    // useEffect
+ 
+    useEffect(() => {
+        fetchUserComments(flowData?.id);
+    }, [flowData?.id]);
 
     return (
         <div className=' relative flex lg:hidden flex-col lg:flex-row  items-center w-screen h-screen'>
@@ -59,22 +96,52 @@ const FlowModalMobile = ({ flowData, setIsFlowModalOpen }) => {
                             </div>
                         </div>
                         <div>
-
                         </div>
                     </div>
                     <div className="flex flex-col px-3 sm:px-5 py-3 md:py-5">
                         <Span className='!text-sm dark:!text-dark_secondary_label'>총 댓글 ${flowData?.comments}개</Span>
-                        <div className="">
-
+                        {/* All comments */}
+                        <div className=" flex flex-col gap-5 my-5  pb-20 ">
+                            {
+                                comments?.map((comment) => (
+                                    <div key={comment?.id} className="w-full">
+                                        {/* user details and comment  */}
+                                        <div className="flex  gap-5">
+                                            <PostAvatar src={comment?.user?.profilePicture} className='border !w-9 !h-9 cursor-pointer' />
+                                            <div className='flex flex-col  gap-0.5 justify-between'>
+                                                <Span className={'!text-sm  -mt-1 dark:!text-dark_secondary_label !text-light_tertiary_label hover:!text-light_primary_label cursor-pointer !font-450'}>{comment?.user?.username}</Span>
+                                                <Span className={'!text-sm !text-light_primary_label'}>{comment?.content}</Span>
+                                            </div>
+                                        </div>
+                                        <div className="">
+                                            {/* date and location  */}
+                                            <div className="flex gap-2 mt-2 ml-14">
+                                                <Span className={'!text-sm dark:!text-dark_secondary_label !text-light_tertiary_label'}>{fDate(comment?.createdAt)} &nbsp; Guangdong</Span>
+                                            </div>
+                                            {/* like and comment icons  */}
+                                            <div className="flex items-center gap-5 ml-14 mt-2">
+                                                <span className=' group flex items-center gap-1 cursor-pointer'>
+                                                    <Iconify icon={'mdi:heart-outline'} className={'!w-4 !h-4  dark:!text-dark_secondary_label dark:hover:!text-dark_secodary_label !text-light_secondary_label group-hover:!text-light_primary_label'} />
+                                                    <Span className={'!text-13fs !font-medium'}>thumbs up</Span>
+                                                </span>
+                                                <span className=' group flex items-center gap-1 cursor-pointer'>
+                                                    <Iconify icon={'iconamoon:comment'} className={'!w-4 !h-4 !text-light_secondary_label group-hover:!text-light_primary_label  dark:!text-dark_secondary_label dark:hover:!text-dark_secodary_label'} />
+                                                    <Span className={'!text-13fs !font-medium'}>0</Span>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                ))
+                            }
                         </div>
                     </div>
                 </div>
             </div>
             {/* footer  */}
             <div className="absolute bottom-0 right-0 w-full h-16 flex justify-between items-center gap-2 sm:gap-5 border-t dark:border-neutral-800 border-gray-200 dark:text-neutral-800 dark:bg-brownish_black bg-white px-3 sm:px-5 z-50">
-                <div className="flex items-center w-full">
-                    <Input type='text' placeholder='커밋 추가' icon="solar:user-circle-linear" className='!py-1.5 !text-sm grow' />
-                </div>
+                <form onSubmit={handleCommit} className="flex items-center w-full">
+                    <Input type='text' placeholder='커밋 추가' icon="solar:user-circle-linear" className='!py-1.5 !text-sm w-full' value={postComment} onChange={(e) => setPostComment(e.target.value)} />
+                </form>
                 <div className="flex items-center gap-1 sm:gap-3">
                     <span className='flex items-center gap-1 cursor-pointer'>
                         <Iconify icon={'ph:heart'} />
