@@ -1,9 +1,9 @@
-import Image from 'next/image'
 import React from 'react'
+import Image from 'next/image'
 
-const PostAvatar = ({ img , className}) => {
+const PostAvatar = ({ img, className }) => {
     return (
-            <img src={img} alt='avatar' className={`rounded-full !w-5 !h-5 ${className}`}/>
+        <img src={img === null ? '/assets/images/card_img.webp' : img} alt='avatar' className={`rounded-full w-5 h-5 object-cover ${className}`} />
     )
 }
 

@@ -1,1 +1,1 @@
-export const HOST_API_KEY = "http://localhost:4000/api";
+export const HOST_API_KEY = "https://hotple-project-back.onrender.com/api";

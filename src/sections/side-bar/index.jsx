@@ -7,6 +7,8 @@ import H6 from "@/components/ui/Typography/h6";
 import Div from "@/components/ui/div";
 import DropdownMenu from "@/components/dropdown-menu";
 import Link from "next/link";
+import Span from "@/components/ui/Typography/span";
+
 
 const SideBar = () => {
   const [activeTab, setActiveTab] = useState("发现");
@@ -18,26 +20,20 @@ const SideBar = () => {
       id: '1',
       title: '발견하다',
       icon: 'solar:home-smile-linear',
-      link: '',
+      link: '/',
     },
     {
       id: '2',
       title: '풀어 주다',
       icon: 'mynaui:plus-square',
-      link: '',
-    },
-    {
-      id: '3',
-      title: '통지하다',
-      icon: 'ci:bell',
       link: '/user/post/new',
     },
-    {
-      id: '4',
-      title: '장소',
-      icon: 'ci:bell',
-      link: `/place/${placeId}`,
-    },
+    // {
+    //   id: '4',
+    //   title: '장소',
+    //   icon: 'ci:bell',
+    //   link: `/place/${placeId}`,
+    // },
     {
       id: "5",
       title: "장소",
@@ -84,7 +80,7 @@ const SideBar = () => {
         <div className="flex flex-col gap-2 w-full">
           {tabs?.map((tab, index) => (
             <Link href={tab?.link} >
-            <IconButton key={index} icon={tab?.icon} iconClass={' !w-22wd '} className={` w-full ${tab.title == activeTab ? 'dark:bg-dark_bg_grey bg-light_bg_grey' : ''}`} onClick={() => setActiveTab(tab.title)}>{tab?.title}</IconButton>
+            <IconButton key={index} icon={tab?.icon} iconClass={' !w-5 !h-5 '} className={` w-full ${tab.title == activeTab ? 'dark:bg-dark_bg_grey bg-light_bg_grey' : ''}`} onClick={() => setActiveTab(tab.title)}>{tab?.title}</IconButton>
             </Link>
           ))}
         </div>
@@ -100,21 +96,22 @@ const SideBar = () => {
                     "!w-4 !h-4 dark:text-dark_tertiary_label text-neutral-500  "
                   }
                 />
-                <H6
+                <Span
                   className={
                     "dark:!text-dark_tertiary_label !text-neutral-500 "
                   }
                 >
-                  {item.title}
-                </H6>
+                  {item.title}  
+                </Span>
               </div>
             ))}
           </div>
         </div>
       </div>
       <div className="mb-0">
-        <DropdownMenu>
-          <IconButton icon={'fluent:navigation-24-filled'} className={'w-full'}>더 </IconButton>
+        <DropdownMenu> 
+          <IconButton icon={'fluent:navigation-24-filled'} iconClass={'!w-5 !h-5'} className={'w-full'}>더 </IconButton>
+      
         </DropdownMenu>
       </div>
     </Div>

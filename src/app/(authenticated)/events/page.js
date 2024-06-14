@@ -15,6 +15,7 @@ import {
 import { getShortDescription, removeDuplicates } from "@/utils/helpers";
 import SolidButton from "@/components/ui/Buttons/solid-button";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 export default function Events() {
   const [events, setEvents] = useState([]);
@@ -101,35 +102,39 @@ export default function Events() {
                 .toLowerCase()
                 .includes(selectedCategory.toLowerCase())
             )
-            ?.map((event) => (
-              <div
-                key={event.id}
-                className="flex bg-white shadow-md rounded-lg overflow-hidden"
-              >
-                {}
-                <Image
-                  src={
-                    event.filePath
-                      ? event.filePath
-                      : "/no-image-placeholder.png"
-                  }
-                  alt={event.title}
-                  className="w-1/3 h-full object-cover"
-                  width={400}
-                  height={200}
-                />
-                <div className="p-4 w-2/3">
-                  <h2 className="text-xl font-bold">{event.title}</h2>
-                  <div className="flex flex-wrap gap-3">
-                    <p className="text-gray-600">{event.category} -</p>
-                    <p className="text-red">{getDaysDifference(event.date)}</p>
+            ?.map((event) => {
+             
+              return(
+                <Link
+                href={`/events/${event?.id}`}
+                  key={event.id}
+                  className="flex bg-white shadow-md rounded-lg overflow-hidden"
+                >
+                  {}
+                  <Image
+                    src={
+                      event.filePath
+                        ? event.filePath
+                        : "/no-image-placeholder.png"
+                    }
+                    alt={event.title}
+                    className="w-1/3 h-full object-cover"
+                    width={400}
+                    height={200}
+                  />
+                  <div className="p-4 w-2/3">
+                    <h2 className="text-xl font-bold">{event.title}</h2>
+                    <div className="flex flex-wrap gap-3">
+                      <p className="text-gray-600">{event.category} -</p>
+                      <p className="text-red">{getDaysDifference(event.date)}</p>
+                    </div>
+                    <p className="mt-2 text-gray-700">
+                      {getShortDescription(event.description, 15)}
+                    </p>
                   </div>
-                  <p className="mt-2 text-gray-700">
-                    {getShortDescription(event.description, 15)}
-                  </p>
-                </div>
-              </div>
-            ))}
+                </Link>
+              )
+            })}
         </div>
       </main>
     </div>
