@@ -1,27 +1,25 @@
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import DownloadButton from './download-button';
 import { fileData, fileThumb, fileFormat } from './utils';
+import Image from 'next/image';
 
 export default function FileThumbnail({ file, tooltip, imageView, onDownload, sx, imgSx }) {
   const { name = '', path = '', preview = '' } = fileData(file);
   const format = fileFormat(path || preview);
   const [showTooltip, setShowTooltip] = useState(false);
 
-  const renderContent = format === 'image' && imageView ? (
-    <img
+  const renderContent = (
+    <Image
       src={preview}
-      className="w-full h-full object-cover"
+      height={100}
+      width={100}
+      alt='image'
+      className="object-cover"
       style={{ ...imgSx }}
     />
-  ) : (
-    <img
-      src={fileThumb(format)}
-      className="w-32 h-32"
-      style={{ ...sx }}
-    />
-  );
+  )
 
   return (
     <>

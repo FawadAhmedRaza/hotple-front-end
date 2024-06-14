@@ -16,7 +16,6 @@ const AuthGuard = ({ children }) => {
           setIsOpen(true);
         }
       }, [isAuthenticated]);
-  
   if (!isAuthenticated && !user) {
     return <UserLoginView isOpen={isOpen} setIsOpen={setIsOpen}  />
     }

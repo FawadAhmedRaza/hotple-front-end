@@ -4,11 +4,7 @@ import ReleaseSection from "@/sections/user/post/view/release-sec";
 import React, { useState } from "react";
 
 const page = () => {
-  return (
-    <div>
-      <PostCreateView />
-    </div>
-  );
+  return <PostCreateView />;
 };
 
 export default page;

@@ -8,7 +8,7 @@ const Tabs = ({ tabs }) => {
   };
 
   return (
-    <div className="w-full max-w-lg mx-auto ">
+    <div className="w-full max-w-4xl mx-auto  ">
       <div className="flex ">
         {tabs.map((tab) => (
           <button

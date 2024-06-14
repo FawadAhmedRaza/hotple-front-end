@@ -7,5 +7,4 @@ const BreadCrumbs = ({ heading }) => {
     </div>
   );
 };
-
 export default BreadCrumbs;

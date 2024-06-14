@@ -28,7 +28,7 @@ const ImageSlider = ({ slides }) => {
         >
           {slides?.map((slide, index) => (
             <div key={slide?.flowId} className="flex flex-shrink-0 justify-center items-center w-full h-full">
-              <img src={slide?.filePath} className="h-full object-contain z-50" loading="lazy" style={{ objectFit: 'cover' }} alt={`Slide ${index + 1}`} />
+              <img src={slide?.filePath} className="h-full object-contain z-50" loading="lazy"  alt={`Slide ${index + 1}`} />
             </div>
           ))}
         </div>
