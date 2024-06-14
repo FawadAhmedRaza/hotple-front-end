@@ -39,10 +39,16 @@ const SideBar = () => {
       link: `/place/${placeId}`,
     },
     {
-      id: '5',
+      id: "5",
       title: "장소",
       icon: "f7:placemark",
       link: "/place/new",
+    },
+    {
+      id: "6",
+      title: "이벤트",
+      icon: "mdi:events",
+      link: "/events",
     },
   ];
 
@@ -107,7 +113,7 @@ const SideBar = () => {
         </div>
       </div>
       <div className="mb-0">
-        <DropdownMenu> 
+        <DropdownMenu>
           <IconButton icon={'fluent:navigation-24-filled'} className={'w-full'}>더 </IconButton>
         </DropdownMenu>
       </div>
