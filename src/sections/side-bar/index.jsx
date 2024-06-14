@@ -7,6 +7,8 @@ import H6 from "@/components/ui/Typography/h6";
 import Div from "@/components/ui/div";
 import DropdownMenu from "@/components/dropdown-menu";
 import Link from "next/link";
+import Span from "@/components/ui/Typography/span";
+
 
 const SideBar = () => {
   const [activeTab, setActiveTab] = useState("发现");
@@ -93,13 +95,13 @@ const SideBar = () => {
                     "!w-4 !h-4 dark:text-dark_tertiary_label text-neutral-500  "
                   }
                 />
-                <H6
+                <Span
                   className={
                     "dark:!text-dark_tertiary_label !text-neutral-500 "
                   }
                 >
-                  {item.title}
-                </H6>
+                  {item.title}  
+                </Span>
               </div>
             ))}
           </div>

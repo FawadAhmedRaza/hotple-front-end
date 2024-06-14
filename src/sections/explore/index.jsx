@@ -1,67 +1,15 @@
 'use client'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Div from '@/components/ui/div'
 import Button from '@/components/ui/Buttons/button'
 import ExploreCards from '@/sections/explore-cards'
-
+import { getFlows } from '@/api/flows'
 
 const Explore = () => {
-
     const [activeCat, setActiveCat] = useState('추천')
+    const [flows, setFlows] = useState([])
 
     // Raw Data 
-    
-    const flowCardData = [
-        {
-            id: '1',
-            title: '이것과 아이를 키우는 것의 차이점은 무엇입니까',
-            img: '/assets/images/card_img.webp',
-            userImg: '/assets/images/card_img.webp',
-            userName: '탁월',
-            likes: '100',
-        },
-        {
-            id: '2',
-            title: '이것과 아이를 키우는 것의 차이점은 무엇입니까',
-            video: '/vedio.mp4',
-            userImg: '/assets/images/card_img.webp',
-            userName: '탁월',
-            likes: '100',
-        },
-        {
-            id: '3',
-            title: '이것과 아이를 키우는 것의 차이점은 무엇입니까',
-            img: '/assets/images/card_img.webp',
-            userImg: '/assets/images/card_img.webp',
-            userName: '탁월',
-            likes: '100',
-        },
-        {
-            id: '4',
-            title: '이것과 아이를 키우는 것의 차이점은 무엇입니까',
-            video: '/vedio.mp4',
-            userImg: '/assets/images/card_img.webp',
-            userName: '탁월',
-            likes: '100',
-        },
-        {
-            id: '5',
-            title: '이것과 아이를 키우는 것의 차이점은 무엇입니까',
-            img: '/assets/images/card_img.webp',
-            userImg: '/assets/images/card_img.webp',
-            userName: '탁월',
-            likes: '100',
-        },
-        {
-            id: '6',
-            title: '이것과 아이를 키우는 것의 차이점은 무엇입니까',
-            video: '/vedio.mp4',
-            userImg: '/assets/images/card_img.webp',
-            userName: '탁월',
-            likes: '100',
-        },
-    ]
-
     const categoryTabs = [
         {
             id: '1',
@@ -100,6 +48,20 @@ const Explore = () => {
         },
     ]
 
+    // Fetch Flow Data From API  
+    const fetchFlows = async () => {
+        try {
+            const response = await getFlows()
+            setFlows(response)
+        } catch (error) {
+            console.log(error.message, 'network error 404')
+        }
+    }
+
+    useEffect(() => {
+        fetchFlows()
+    }, []);
+
     return (
 
         <Div className='w-full flex flex-col -mt-2 lg:!px-0 lg:!pr-8'>
@@ -113,7 +75,7 @@ const Explore = () => {
 
             </div>
 
-            <ExploreCards flowData={flowCardData} />
+            <ExploreCards flows={flows}/>
 
         </Div>
     )
