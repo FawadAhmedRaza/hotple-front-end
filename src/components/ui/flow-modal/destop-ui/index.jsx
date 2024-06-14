@@ -9,13 +9,15 @@ import Paragraph from '../../Typography/paragraph';
 import AnchotTag from '../../Typography/anchor-tag';
 import Iconify from '../../Iconify-icons/Iconify';
 import ImageSlider from '@/components/image-slider';
-
+import { postFlowComments } from '@/api/flowComments';
+import { useAuthContext } from '@/context/auth/useAuthContext';
 
 const FlowModalDesktop = ({ flowData }) => {
     // States
     const [hasScrolled, setHasScrolled] = useState(false);
+    const [flowComment, setFlowCommet] = useState('');
     const scrollRef = useRef(null);
-
+    const {user} = useAuthContext()
     // functions 
     const handleScroll = () => {
         if (scrollRef.current) {
@@ -23,6 +25,21 @@ const FlowModalDesktop = ({ flowData }) => {
         }
     };
 
+    const handleCommit = async (e) => {
+            try {
+                e.preventDefault();
+                const response = await postFlowComments(flowData?.id,{
+                    userId:user?.id,
+                    content:flowComment
+                });
+                if (response.status==201) {
+                    setFlowCommet("")
+                }
+            } catch (err) {
+                console.log(err)
+            }
+
+    }
     // useEffect
     useEffect(() => {
         const scrollDiv = scrollRef.current;
@@ -38,12 +55,12 @@ const FlowModalDesktop = ({ flowData }) => {
         <div className=' hidden lg:flex flex-col lg:flex-row justify-between items-center'>
 
             {/* Images and Video */}
-            <div className=' w-full lg:w-[550px]'>
-                { flowData?.media[0]?.mediaType !== 'video/mp4' ? (
-                        <ImageSlider slides={flowData?.media} />
+            <div className=' w-full lg:w-460wd '>
+                {flowData?.media[0]?.mediaType !== 'video/mp4' ? (
+                    <ImageSlider slides={flowData?.media} />
                 ) : (
                     <video controls className='rounded-l-2xl h-560ph xl:h-680ph w-full -mt-2 bg-black'>
-                        <source src={flowData?.media[0]?.filePath}  type="video/mp4" />
+                        <source src={flowData?.media[0]?.filePath} type="video/mp4" />
                     </video>
                 )}
             </div>
@@ -90,12 +107,13 @@ const FlowModalDesktop = ({ flowData }) => {
                         </div>
                     </div>
                 </div>
+
                 {/* footer Section */}
                 <div className="absolute bottom-0 right-0 w-full h-16 xl:h-70ph flex justify-between items-center gap-5 dark:bg-brownish_black bg-white px-5">
-                    <div className="flex items-center gap-3">
-                        <Input type='text' placeholder='커밋 추가' icon="solar:user-circle-linear" className='!py-1.5 !text-sm' />
-                    </div>
-                    <div className="flex items-center gap-3">
+                    <form onSubmit={handleCommit} className="flex items-center gap-3 w-full">
+                        <Input type='text' placeholder='커밋 추가' icon="solar:user-circle-linear" className='!py-1.5 !text-sm w-full' value={flowComment} onChange={(e) => setFlowCommet(e.target.value)}  />
+                    </form>
+                    <div className="flex items-center gap-3" >
                         <span className='flex items-center gap-1 cursor-pointer'>
                             <Iconify icon={'ph:heart'} />
                             <Span className={'dark:!text-dark_primary_label !text-light_primary_label !font-semibold !text-15fs'}>{flowData?.likes}+</Span>
@@ -113,6 +131,7 @@ const FlowModalDesktop = ({ flowData }) => {
                         </span>
                     </div>
                 </div>
+
             </div>
         </div>
     )

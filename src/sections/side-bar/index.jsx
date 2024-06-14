@@ -11,7 +11,7 @@ import Span from "@/components/ui/Typography/span";
 
 
 const SideBar = () => {
-  const [activeTab, setActiveTab] = useState("发现");
+  const [activeTab, setActiveTab] = useState("발견하다");
   // Data
 
   const placeId = "6669a66011cf926abd76c945"
