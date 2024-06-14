@@ -37,7 +37,7 @@ const PostCreateView = () => {
 
   const files = watch("files");
   const data = watch()
- 
+
   useEffect(() => {
     if (files && files.length > 0) {
       setHasChanged(true);
