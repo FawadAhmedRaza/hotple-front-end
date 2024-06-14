@@ -39,7 +39,7 @@ const SideBar = () => {
       link: `/place/${placeId}`,
     },
     {
-      id: "4",
+      id: '5',
       title: "장소",
       icon: "f7:placemark",
       link: "/place/new",
