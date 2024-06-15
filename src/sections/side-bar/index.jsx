@@ -11,7 +11,7 @@ import Span from "@/components/ui/Typography/span";
 
 
 const SideBar = () => {
-  const [activeTab, setActiveTab] = useState("发现");
+  const [activeTab, setActiveTab] = useState("발견하다");
   // Data
 
   const placeId = "6669a66011cf926abd76c945"
@@ -116,8 +116,7 @@ const SideBar = () => {
       </div>
       <div className="mb-0">
         <DropdownMenu> 
-          <IconButton icon={'fluent:navigation-24-filled'} iconClass={'!w-5 !h-5'} className={'w-full'}>더 </IconButton>
-      
+          <IconButton icon={'fluent:navigation-24-filled'} className={'w-full'} iconClass={'!w-5 !h-5'}>더 </IconButton>
         </DropdownMenu>
       </div>
     </Div>

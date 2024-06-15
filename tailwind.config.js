@@ -40,6 +40,7 @@ module.exports = {
         '26fs': "26px",
         '32fs': "32px",
         '15fs': "15px",
+        '13fs': "13px",
       },
       lineHeight: {
         '54lh': '54px',

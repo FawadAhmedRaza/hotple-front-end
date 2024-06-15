@@ -56,7 +56,7 @@ const Flow = ({ flow }) => {
 
                     <div className='flex items-center justify-between'>
                         <div className="flex items-center gap-1 sm:gap-2">
-                            <PostAvatar img={flow?.user?.profilePicture} />
+                            <PostAvatar src={flow?.user?.profilePicture} />
                             <Span id={flow?.user?.id} className={' dark:!text-dark_secondary_label dark:hover:!text-dark_primary_label !truncate'}>{flow?.user?.username}</Span>
                         </div>
                         <div className=" group flex items-center gap-1 cursor-pointer">

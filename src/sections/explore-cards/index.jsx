@@ -6,7 +6,6 @@ const ExploreCards = ({ flows }) => {
 
     return (
         <div className='pt-14'>
-            {/* <div className=" relative my-0 mx-auto grid gap-3 sm:gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 w-full h-full  pt-14"> */}
             <ResponsiveMasonry
                 columnsCountBreakPoints={{
                     200: 1,
@@ -25,7 +24,6 @@ const ExploreCards = ({ flows }) => {
                 </Masonry>
             </ResponsiveMasonry >
         </div>
-        // </div>
     )
 
 }
