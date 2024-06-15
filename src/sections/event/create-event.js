@@ -40,12 +40,12 @@ const EventCreateView = () => {
   };
 
   const NewEventSchema = Yup.object().shape({
-    placeId: Yup.string().required("Please Select Event Place"),
+    placeId: Yup.string().required("이벤트 장소를 선택해 주세요"),
     description: Yup.string(),
-    title: Yup.string().required("Title is required"),
-    date: Yup.date().required("Select Event Date"),
-    time: Yup.string().required("Select Event Time"),
-    category: Yup.string().required("Enter Event Category"),
+    title: Yup.string().required("제목은 필수 항목입니다."),
+    date: Yup.date().required("이벤트 날짜 선택"),
+    time: Yup.string().required("이벤트 시간 선택"),
+    category: Yup.string().required("이벤트 카테고리 입력"),
     image: Yup.mixed(),
   });
 

@@ -10,7 +10,7 @@ const BgLinkButton = ({ children, className, icon, iconClassName , link}) => {
                 <H5 className={'!text-nowrap !font-normal  group-hover:!text-light_primary_label group-hover:dark:!text-dark_primary_label dark:!text-dark_secondary_label !text-light_secondary_label'}>
                     {children}
                 </H5>
-                <Iconify icon={icon} className={`hidden group-hover:flex dark:!text-light_primary_label dark:!text-grey-500 !text-gray-400 !w-6 -rotate-45 ${iconClassName} `} 
+                <Iconify icon={icon} className={`hidden group-hover:flex dark:!text-light_primary_label dark:!text-grey-500 !text-gray-400 !w-6 !h-6 -rotate-45 ${iconClassName} `} 
                 />
             </div>
         </Link>
