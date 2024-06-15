@@ -1,11 +1,14 @@
-import React from 'react'
-import Image from 'next/image'
+import Image from "next/image";
+import React from "react";
 
 const PostAvatar = ({ img, className }) => {
-    return (
-        <img src={img === null ? '/assets/images/card_img.webp' : img} alt='avatar' className={`rounded-full w-5 h-5 object-cover ${className}`} />
-    )
-}
+  return (
+    <img
+      src={img}
+      alt="avatar"
+      className={`rounded-full !w-5 !h-5 ${className}`}
+    />
+  );
+};
 
-export default PostAvatar
-
+export default PostAvatar;
