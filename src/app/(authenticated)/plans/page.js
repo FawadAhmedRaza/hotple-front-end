@@ -7,6 +7,7 @@ import { getAllPlans, getAllSharedPlans } from "@/api/plan";
 import { format } from "date-fns";
 import { useRouter } from "next/navigation";
 import { useAuthContext } from "@/context/auth/useAuthContext";
+import PlanSkeleton from "@/components/Skeleton/PlanSkeleton";
 
 const MyPlans = () => {
   const [plans, setPlans] = useState([]);
@@ -34,7 +35,7 @@ const MyPlans = () => {
   }, []);
 
   if (loading) {
-    return <h1>Loading...</h1>;
+    return <div><PlanSkeleton /></div>;
   }
 
   return (

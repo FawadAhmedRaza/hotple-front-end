@@ -44,10 +44,10 @@ const Flow = ({ flow }) => {
                             <FlowVideoTumbnail videoSrc={flow?.media[0]?.filePath} />
                         ) 
                     }
-                </div>
+                </div> 
 
                 <div className="flex flex-col gap-1.5 px-2.5 cursor-pointer w-full">
-                    {/* Post title  */}
+                    {/* Post title  */} 
                     <div className="max-w-full w-full">
                         <H6 className={'truncate !font-medium'}>{flow?.title}</H6>
                     </div>

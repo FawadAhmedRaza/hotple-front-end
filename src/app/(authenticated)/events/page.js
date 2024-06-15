@@ -1,7 +1,7 @@
 "use client";
 import { getAllEvents } from "@/api/event";
 import Select from "@/components/select";
-import {  getDaysDifference } from "@/utils/format-time";
+import { getDaysDifference } from "@/utils/format-time";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import {
@@ -15,10 +15,11 @@ import { getShortDescription, removeDuplicates } from "@/utils/helpers";
 import SolidButton from "@/components/ui/Buttons/solid-button";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
+import EvenetSkeleton from "@/components/Skeleton/EvenetSkeleton";
 
 export default function Events() {
   const [events, setEvents] = useState([]);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [selectedCategory, setSelectedCategory] = useState("");
 
   const [selectedMonth, setSelectedMonth] = useState(
@@ -53,7 +54,7 @@ export default function Events() {
   }, [selectedMonth]);
 
   if (loading) {
-    return <h1>loading...</h1>;
+    return <h1><EvenetSkeleton /></h1>;
   }
   return (
     <div>
@@ -80,7 +81,7 @@ export default function Events() {
             />
           </div>
         </div>
-        <SolidButton onClick={()=>router.push("/events/new")} className={'w-40'}>새로운 이벤트</SolidButton>
+        <SolidButton onClick={() => router.push("/events/new")} className={'w-40'}>새로운 이벤트</SolidButton>
       </header>
 
       <main className="container mx-auto px-4 my-8">
@@ -102,14 +103,14 @@ export default function Events() {
                 .includes(selectedCategory.toLowerCase())
             )
             ?.map((event) => {
-             
-              return(
+
+              return (
                 <Link
-                href={`/events/${event?.id}`}
+                  href={`/events/${event?.id}`}
                   key={event.id}
                   className="flex bg-white shadow-md rounded-lg overflow-hidden"
                 >
-                  {}
+                  { }
                   <Image
                     src={
                       event.filePath
