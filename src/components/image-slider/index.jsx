@@ -17,7 +17,7 @@ const ImageSlider = ({ slides }) => {
 
   return (
     <div
-      className="relative w-full h-80 sm:h-400ph md:h-550ph lg:h-550ph xl:h-670ph mx-auto dark:bg-black bg-light_bg_grey"
+      className="relative w-full h-80 sm:h-400ph md:h-550ph lg:h-550ph xl:h-600ph 2xl:h-680ph mx-auto dark:bg-black bg-light_bg_grey"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >

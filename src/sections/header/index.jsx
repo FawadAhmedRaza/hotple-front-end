@@ -74,7 +74,7 @@ const Header = () => {
     ]
 
     return (
-        <Div className={'fixed top-0 flex justify-between items-center gap-2 sm:gap-0 w-full z-40'}>
+        <Div className={'fixed top-0 flex justify-between items-center gap-2 sm:gap-0 w-full !z-40'}>
             {/* logo  */}
             <Link href={'/'}>
                 <Logo className={` ${activeSearchBar ? 'hidden' : ' block'}`} />

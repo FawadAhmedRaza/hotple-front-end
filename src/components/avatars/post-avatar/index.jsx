@@ -7,5 +7,4 @@ const PostAvatar = ({ src, className }) => {
     )
 }
 
-export default PostAvatar
-
+export default PostAvatar;
