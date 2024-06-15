@@ -7,6 +7,7 @@ import { getAllPlans, getAllSharedPlans } from "@/api/plan";
 import { format } from "date-fns";
 import { useRouter } from "next/navigation";
 import { useAuthContext } from "@/context/auth/useAuthContext";
+import Link from "next/link";
 
 const MyPlans = () => {
   const [plans, setPlans] = useState([]);
@@ -46,47 +47,51 @@ const MyPlans = () => {
         </SolidButton>
       </div>
       <div className="mt-10 flex gap-2 flex-wrap">
-        {plans?.map((plan) => (
-          <div className="w-[330px] bg-white   dark:bg-gray-800 ">
-            <Image
-              className="rounded-lg !w-full"
-              src={plan?.coverImage}
-              alt=""
-              height={200}
-              width={100}
-            />
-            <div className="p-2">
-              <p className="mb-3 text-md font-bold text-black dark:text-gray-400">
-                {plan?.name}
-              </p>
-              <div className="flex gap-5 items-center flex-wrap">
-                <div class="flex -space-x-1 rtl:space-x-reverse">
-                  <PersonAvator
-                    url={plan?.user?.profilePicture}
-                    alt={plan?.user?.username}
-                    height={30}
-                    width={30}
-                  />
-                  {plan?.planSharedWith?.map((sharedUser) => (
+        {plans?.map((plan) => {
+          console.log("plan in plan screen",plan)
+          return (
+            <Link href={`/plans/${plan?.id}`} className="w-[330px] bg-white   dark:bg-gray-800 ">
+              <Image
+                className="rounded-lg !w-full"
+                src={plan?.coverImage}
+                alt=""
+                height={200}
+                width={100}
+              />
+              <div className="p-2">
+                <p className="mb-3 text-md font-bold text-black dark:text-gray-400">
+                  {plan?.name}
+                </p>
+                <div className="flex gap-5 items-center flex-wrap">
+                  <div class="flex -space-x-1 rtl:space-x-reverse">
                     <PersonAvator
-                      url={sharedUser?.user?.profilePicture}
-                      alt={sharedUser?.user?.username}
+                      url={plan?.user?.profilePicture}
+                      alt={plan?.user?.username}
                       height={30}
                       width={30}
                     />
-                  ))}
+                    {plan?.planSharedWith?.map((sharedUser) => (
+                      <PersonAvator
+                        url={sharedUser?.user?.profilePicture}
+                        alt={sharedUser?.user?.username}
+                        height={30}
+                        width={30}
+                      />
+                    ))}
+                  </div>
+                  {plan.startDate && plan.endDate && (
+                    <p className="text-gray-500 text-md font-semibold">
+                      {format(new Date(plan.startDate), "dd MMMM")} -{" "}
+                      {format(new Date(plan.endDate), "dd MMMM")}
+                    </p>
+                  )}
+                  <p className="text-gray-500 text-md  font-semibold">0 Places</p>
                 </div>
-                {plan.startDate && plan.endDate && (
-                  <p className="text-gray-500 text-md font-semibold">
-                    {format(new Date(plan.startDate), "dd MMMM")} -{" "}
-                    {format(new Date(plan.endDate), "dd MMMM")}
-                  </p>
-                )}
-                <p className="text-gray-500 text-md  font-semibold">0 Places</p>
               </div>
-            </div>
-          </div>
-        ))}
+            </Link>
+          )
+        }
+        )}
       </div>
       {sharedPlans.length > 0 && (
         <>
