@@ -47,8 +47,14 @@ const SideBar = () => {
     {
       id: "6",
       title: "이벤트",
-      icon: "mdi:events",
+      icon: "healthicons:i-schedule-school-date-time",
       link: "/events",
+    },
+    {
+      id: "7",
+      title: "내 계획",
+      icon: "mdi:invoice-schedule",
+      link: "/plans",
     },
   ];
 

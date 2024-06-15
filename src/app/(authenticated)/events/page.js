@@ -1,8 +1,7 @@
 "use client";
 import { getAllEvents } from "@/api/event";
 import Select from "@/components/select";
-import { fToNow, getDaysDifference } from "@/utils/format-time";
-import Head from "next/head";
+import {  getDaysDifference } from "@/utils/format-time";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import {
