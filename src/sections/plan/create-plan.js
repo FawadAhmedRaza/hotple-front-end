@@ -13,6 +13,7 @@ import RHFFormProvider from "@/components/rhf-hooks/Form";
 import { createPlan, planShare } from "@/api/plan";
 import { useRouter } from "next/navigation";
 import { useAuthContext } from "@/context/auth/useAuthContext";
+import SolidButton from "@/components/ui/Buttons/solid-button";
 
 const TripPlanForm = () => {
   const [users, setUsers] = useState([]);
@@ -160,12 +161,12 @@ const TripPlanForm = () => {
             )}
           />
         </div>
-        <button
+        <SolidButton
           type="submit"
-          className="w-full bg-orange-500 text-white p-2 rounded-lg hover:bg-orange-600"
+          className="w-full !rounded-lg"
         >
           계획 만들기
-        </button>
+        </SolidButton>
       </RHFFormProvider>
     </div>
   );

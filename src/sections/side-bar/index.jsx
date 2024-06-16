@@ -66,7 +66,7 @@ const SideBar = () => {
       icon: 'ph:plant-light',
     },
     {
-      id: '3',
+      id: '3', 
       title: '즐겨찾기 및 좋아요 표시한 메모 보기',
       icon: 'hugeicons:star',
     },

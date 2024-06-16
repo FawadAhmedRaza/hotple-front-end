@@ -1,74 +1,71 @@
 {
-    "id": "6669a66011cf926abd76c945",
-    "name": "The Great Cafe",
-    "description": null,
-    "address": "123 Main Street",
-    "city": "Metropolis",
-    "state": "NY",
-    "country": "USA",
-    "postalCode": "10001",
-    "latitude": 40.712776,
-    "longitude": -74.005974,
-    "phoneNumber": "+1-555-555-5555",
-    "website": "http://www.thegreatcafe.com",
-    "email": "info@thegreatcafe.com",
-    "type": "Cafe",
-    "createdAt": "2024-06-12T13:45:02.889Z",
-    "updatedAt": "2024-06-12T13:45:02.889Z",
-    "menus": [],
-    "images": [
+    "id": "666d6ffbfd9553b82ddf2d28",
+    "userId": "66646b5d0b76e064e36eaac1",
+    "name": "Sea Concert",
+    "coverImage": "https://hotplevideos.s3.ap-northeast-2.amazonaws.com/upload/17184481194660.37885663297925465",
+    "startDate": "2024-06-28T19:00:00.000Z",
+    "endDate": "2024-06-27T19:00:00.000Z",
+    "user": {
+        "id": "66646b5d0b76e064e36eaac1",
+        "username": "Ammad",
+        "email": "ammaddev2+2@gmail.com",
+        "passwordHash": "$2b$10$rLGoHat3avsSLL2J3/c1ded/W7eYUMh9UA5/sUTTdgPieSkdRU1Tu",
+        "profilePicture": null,
+        "bio": null
+    },
+    "planSharedWith": [
         {
-            "id": "6669b332216903af0a4771a1",
-            "placeId": "6669a66011cf926abd76c945",
-            "url": "https://hotplevideos.s3.ap-northeast-2.amazonaws.com/upload/17182031768860.5625621695653642",
-            "description": "description",
-            "createdAt": "2024-06-12T14:39:41.926Z",
-            "updatedAt": "2024-06-12T14:39:41.926Z"
-        }
-    ],
-    "events": [
-        {
-            "id": "6669b0456aa4b3de037ac69b",
-            "title": "Live Music Night",
-            "date": "2024-07-15T19:00:00.000Z",
-            "time": "19:00",
-            "location": "The Great Cafe",
-            "description": "Join us for a night of live music featuring local bands.",
-            "category": "music event",
-            "placeId": "6669a66011cf926abd76c945",
-            "likes": 0,
-            "comments": 0,
-            "rating": null
-        }
-    ],
-    "tags": [
-        {
-            "id": "6669a92411cf926abd76c94b",
-            "placeId": "6669a66011cf926abd76c945",
-            "tagId": "6669a7e311cf926abd76c948",
-            "tag": {
-                "id": "6669a7e311cf926abd76c948",
-                "name": "Abc",
-                "createdAt": "2024-06-12T13:51:30.203Z",
-                "updatedAt": "2024-06-12T13:51:30.203Z"
+            "id": "666d6ffcfd9553b82ddf2d29",
+            "userId": "6667661cd6539c1240b0ec51",
+            "planId": "666d6ffbfd9553b82ddf2d28",
+            "user": {
+                "id": "6667661cd6539c1240b0ec51",
+                "username": "Jawad Ahmed",
+                "email": "jawad.walbi@gmail.com",
+                "passwordHash": "$2b$10$1lys954Iabitjq79EVF.pOWmBe2JOJfZlsIqCp5/fCPUxukakXmiu",
+                "profilePicture": null,
+                "bio": null
             }
-        }
-    ],
-    "placeReviews": [
+        },
         {
-            "id": "666b0731cb62284b124fdc83",
+            "id": "666d6ffdfd9553b82ddf2d2a",
             "userId": "6663024f22e429fa4b4ca49c",
-            "placeId": "6669a66011cf926abd76c945",
-            "rating": 2,
-            "review": "Some Review Testing",
+            "planId": "666d6ffbfd9553b82ddf2d28",
             "user": {
                 "id": "6663024f22e429fa4b4ca49c",
-                "username": "Turk Ammad Updated",
+                "username": "Turk Ammad",
                 "email": "ammaddev2@gmail.com",
                 "passwordHash": "$2b$10$hxAdsTs5V9oTvCWngg9F../WijfKhulRMjasCEGvhzxjYKXPkzq5S",
                 "profilePicture": "https://hotplevideos.s3.ap-northeast-2.amazonaws.com/upload/17178583121110.6338673144465121",
                 "bio": "UPdated Bio"
             }
+        },
+        {
+            "id": "666d6ffdfd9553b82ddf2d2b",
+            "userId": "666764846fe1d39b917cdfbe",
+            "planId": "666d6ffbfd9553b82ddf2d28",
+            "user": {
+                "id": "666764846fe1d39b917cdfbe",
+                "username": "Ammad",
+                "email": "ammaddev2+2@gmail.com",
+                "passwordHash": "$2b$10$4XmF9L7sV7/lzHx01Be4GOkAMAy.c6Ug.UFK540V2FuVpcjwNeKCy",
+                "profilePicture": null,
+                "bio": null
+            }
+        },
+        {
+            "id": "666d6ffefd9553b82ddf2d2c",
+            "userId": "66676671d6539c1240b0ec52",
+            "planId": "666d6ffbfd9553b82ddf2d28",
+            "user": {
+                "id": "66676671d6539c1240b0ec52",
+                "username": "Jawad Ahmed",
+                "email": "jawad.walbi@gmail.com",
+                "passwordHash": "$2b$10$d2nb3tCuViMNLVKVMe4zleDYKcKWayd7OKbXQbMszEzFP70KXPFx2",
+                "profilePicture": null,
+                "bio": null
+            }
         }
-    ]
+    ],
+    "planSections": []
 }

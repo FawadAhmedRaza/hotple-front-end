@@ -9,7 +9,7 @@ const MapView = () => {
 //     allowFullScreen
 //   ></iframe></div>
 <div className='flex h-full w-full object-contain'>
-    <img height="100%" width="100%" src='/assets/images/download.jpeg'/>
+    {/* <img height="100%" width="100%" src='/assets/images/download.jpeg'/> */}
 </div>
   )
 }

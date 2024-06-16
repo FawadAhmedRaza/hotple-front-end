@@ -10,5 +10,5 @@ export default function SingleFilePreview({ imgUrl }) {
         className="w-full h-full rounded"
       />
     </div>
-  );
+  )
 }

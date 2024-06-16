@@ -16,7 +16,7 @@ const CustomerServiceModal = ({ isCustomerServiesModalOpen, setIsCustomerServies
         setIsCustomerServiesModalOpen(false);
     };
     return (
-        <Modal isOpen={isCustomerServiesModalOpen} onClose={closeModal} title="帮助与客服" className={'sm:!max-w-md'}>
+        <Modal isOpen={isCustomerServiesModalOpen} onClose={closeModal} title="帮助与客服" className={'sm:!max-w-md !z-50'}>
             <div className='flex justify-between items-center gap-5 flex-col w-full  '>
                 {/* Message  */}
                 <div className=" flex flex-col gap-2 w-full">
@@ -32,6 +32,9 @@ const CustomerServiceModal = ({ isCustomerServiesModalOpen, setIsCustomerServies
                     <div className="w-full flex justify-between items-center ">
                         <Paragraph className={'dark:!text-dark_tertiary_label'}>图片 <span className='!text-red'>*</span></Paragraph>
                         <Paragraph className={'dark:!text-dark_tertiary_label'}>0/9</Paragraph>
+                    </div>
+                    <div className="">
+                        
                     </div>
                 </div>
 
