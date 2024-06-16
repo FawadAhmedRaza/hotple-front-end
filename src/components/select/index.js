@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import Iconify from "../ui/Iconify-icons/Iconify";
+import  Span  from "../ui/Typography/span";
 
 function Select({ label, options, className, selectClass, value, onChange }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -30,14 +31,14 @@ function Select({ label, options, className, selectClass, value, onChange }) {
         value={options?.find((option) => option?.value === value)?.label || ""}
         readOnly
         placeholder={label}
-        className={` px-3 py-2 border rounded dark:bg-brown   w-full  ${className}`}
+        className={` px-3 py-2 border rounded-md dark:border-neutral-800 border-gray-200 dark:bg-brownish_black  w-full outline-none focus:outline-none  ${className}`}
         onClick={toggleSelect}
       />
       {isOpen && (
         <ul
           id="option_div"
           style={{ scrollbarWidth: "thin" }}
-          className={`flex flex-col gap-1 w-full p-2 border-[1.5px] bg-white dark:bg-brown rounded-xl absolute top-16 shadow-lg z-40 max-h-48 overflow-auto ${selectClass}`}
+          className={`flex flex-col gap-1 w-full p-1 border-[1.5px]  dark:border-neutral-800 border-gray-200 bg-white dark:bg-brown rounded-xl absolute top-12 shadow-lg z-40 max-h-48 overflow-auto ${selectClass}`}
         >
           {options?.map((option, index) => (
             <li
@@ -46,20 +47,20 @@ function Select({ label, options, className, selectClass, value, onChange }) {
                 onChange(option.value);
                 toggleSelect();
               }}
-              className={`flex gap-2 align-center items-center h-8 px-3 py-2 rounded-lg hover:bg-neutral-100 dark:hover:bg-slate cursor-pointer ${
+              className={` flex gap-2 align-center items-center h-8 px-3 py-2 rounded-lg hover:bg-light_bg_grey dark:hover:bg-dark_bg_grey cursor-pointer truncate ${
                 value === option.value
-                  ? "bg-neutral-200 dark:bg-slate"
+                  ? "hover:bg-light_bg_grey dark:hover:bg-dark_bg_grey"
                   : index === 0 && !value
-                  ? "bg-neutral-200 dark:bg-slate dark:hover:bg-slate hover:bg-neutral-200"
+                  ? "hover:bg-light_bg_grey dark:hover:bg-dark_bg_grey "
                   : ""
               }`}
             >
               {option.optionStartIcon && (
                 <span className="mr-2">{option.optionStartIcon}</span>
               )}
-              <span className="text-[13px] text-custom-black grow">
+              <Span className="!text-sm !font-450 grow dark:!text-dark_primary_label !text-light_primary_label">
                 {option.label}
-              </span>
+              </Span>
               {value === option.value && (
                 <Iconify icon="ic:round-check" className="mr-1" />
               )}

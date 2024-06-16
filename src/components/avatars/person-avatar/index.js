@@ -5,13 +5,14 @@ const PersonAvator = ({ url, height = 10, width = 10, alt, ...props }) => {
     return (
       <div
         {...props}
-        className="flex justify-center items-center bg-gray-200 shadow-md p-4 rounded-full"
+        className="flex justify-center items-center bg-gray-200  shadow-md p-4 rounded-full  text-light_primary_label"
         style={{ height: `${height}px`, width: `${width}px` }}
       >
         {alt?.charAt(0)}
       </div>
     );
   }
+  
   return (
     <img
       src={url}

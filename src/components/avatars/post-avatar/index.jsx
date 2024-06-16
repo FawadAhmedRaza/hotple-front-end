@@ -1,14 +1,10 @@
-import Image from "next/image";
-import React from "react";
+import React from 'react'
+import Image from 'next/image'
 
-const PostAvatar = ({ img, className }) => {
-  return (
-    <img
-      src={img}
-      alt="avatar"
-      className={`rounded-full !w-5 !h-5 ${className}`}
-    />
-  );
-};
+const PostAvatar = ({ src, className }) => {
+    return (
+        <img src={src === null ? '/assets/images/person.jpeg' : src} alt='avatar' className={`rounded-full w-5 h-5 object-cover ${className}`} />
+    )
+}
 
 export default PostAvatar;
