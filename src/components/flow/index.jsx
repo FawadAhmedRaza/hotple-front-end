@@ -78,7 +78,7 @@ const Flow = ({ flow }) => {
                 <div className='relative group cursor-pointer w-full px-auto ' onMouseEnter={handleHover} onClick={() => handleModalOpen(flow)}>
                     {flow?.media[0]?.mediaType !== 'video/mp4' ? (
                         <div className="relative max-w-72 mx-auto ">
-                            <img src={flow?.media[0]?.filePath} alt={flow?.title} className=" max-h-72 w-full h-full rounded-2xl object-cover transition-opacity duration-300 mx-auto" />
+                            <img src={flow?.media[0]?.filePath} alt={flow?.title} className=" max-h-72 w-full h-full rounded-20rd object-cover transition-opacity duration-300 mx-auto" />
                             <div className="absolute h-full inset-0 bg-black bg-opacity-15 rounded-2xl opacity-0 hover:opacity-100 transition-opacity duration-300" style={{ width: `${imageWidth}px`, height: `${imageHeight}px` }}></div>
                         </div>
                     ) : (
@@ -102,7 +102,7 @@ const Flow = ({ flow }) => {
                             ) : (
                                 <Iconify icon={'mdi:heart-outline'} className={'!w-4 group-hover:!text-light_primary_label dark:!text-dark_secondary_label !text-light_secondary_label'} />
                             )}
-                            <Span className={" dark:!text-dark_secondary_label group-hover:!text-light_primary_label !text-light_secondary_label"}>{postLikes?.length}</Span>
+                            <Span className={" dark:!text-dark_secondary_label group-hover:!text-light_primary_label !text-light_secondary_label"}>{postLikes?.length}</Span> 
                         </div>
                     </div>
                 </div>
