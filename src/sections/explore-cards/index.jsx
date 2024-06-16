@@ -5,7 +5,7 @@ import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 const ExploreCards = ({ flows }) => {
 
     return (
-        <div className='pt-24'>
+        <div className='pt-70pd  '>
             <ResponsiveMasonry
                 columnsCountBreakPoints={{
                     200: 1,

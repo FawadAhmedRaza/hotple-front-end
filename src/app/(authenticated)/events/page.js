@@ -20,7 +20,7 @@ import H4 from "@/components/ui/Typography/h4";
 import H3 from "@/components/ui/Typography/h3";
 import Paragraph from "@/components/ui/Typography/paragraph";
 import Div from "@/components/ui/div";
-import EvenetSkeleton from "@/components/Skeleton/EvenetSkeleton";
+import EvenetSkeleton from "@/components/Skeletons/EvenetSkeleton";
 
 export default function Events() {
   const [events, setEvents] = useState([]);
@@ -63,7 +63,7 @@ export default function Events() {
   }
   return (
     <Div>
-      <header className="flex flex-col  border-b dark:border-neutral-800 border-gray-200 py-4">
+      <header className="flex flex-col  border-b dark:border-neutral-800 border-gray-200 pb-4">
           <H1 className="">이번 달의 이벤트</H1>
         <div className=" flex flex-col sm:flex-row justify-between sm:items-center gap-3 w-full">
           <div className="flex justify-between items-center mt-4">

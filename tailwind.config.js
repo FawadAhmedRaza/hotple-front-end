@@ -73,6 +73,12 @@ module.exports = {
         '550ph': '550px',
         '560ph': '560px',
       },
+      padding: {
+        '70pd': '70px',
+      },
+      borderRadius: {
+        "20rd": '20px', 
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":

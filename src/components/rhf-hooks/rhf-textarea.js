@@ -18,7 +18,7 @@ const RHFTextArea = ({ name, placeholder,className, label }) => {
               value={field.value}
               {...field}
               onChange={(e) => field.onChange(e.target.value)}
-              className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-xl border border-gray-300 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
+              className="block p-2.5 w-full text-sm text-gray-900 bg-light_bg_grey rounded-xl focus:outline-none dark:bg-brown dark:placeholder-neutral-500 dark:text-white"
               placeholder={placeholder}
             ></textarea>
             {error && <p className="text-red text-sm  px-2">{error.message}</p>}

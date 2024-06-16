@@ -4,7 +4,7 @@ import Div from '@/components/ui/div'
 import Button from '@/components/ui/Buttons/button'
 import ExploreCards from '@/sections/explore-cards'
 import { getFlows } from '@/api/flows'
-import FlowSkeleton from '@/components/Skeleton/FlowSkeleton'
+import FlowSkeleton from '@/components/Skeletons/FlowSkeleton'
 
 const Explore = () => {
     const [activeCat, setActiveCat] = useState('추천')
@@ -78,9 +78,7 @@ const Explore = () => {
                         <Button key={ind} className={`!text-nowrap ${activeCat === cat?.label ? 'dark:!bg-dark_bg_grey !bg-light_bg_grey' : ''}`} onClick={() => setActiveCat(cat?.label)}>{cat?.label}</Button>
                     ))
                 }
-
             </div>
-
 
             {loading ? <FlowSkeleton flows={flows} /> : <ExploreCards flows={flows} />}
 

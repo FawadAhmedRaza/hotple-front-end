@@ -13,8 +13,7 @@ import Paragraph from "@/components/ui/Typography/paragraph";
 import H4 from "@/components/ui/Typography/h4";
 import Link from "next/link";
 
-
-import PlanSkeleton from "@/components/Skeleton/PlanSkeleton";
+import PlanSkeleton from "@/components/Skeletons/PlanSkeleton";
 
 const MyPlans = () => {
   const [plans, setPlans] = useState([]);
@@ -47,7 +46,7 @@ const MyPlans = () => {
 
   return (
     <Div className="flex flex-col bg-white overflow-hidden">
-      <div className="flex justify-between pt-4">
+      <div className="flex justify-between">
         <H1 className="">내 일정 계획</H1>
         <SolidButton className={'!py-2'} onClick={() => router.push("/plans/new")}>
           + 새로운 계획
@@ -65,10 +64,10 @@ const MyPlans = () => {
             {plans?.map((plan) => (
               <div className=" w-full max-h-full">
                 {/* // image  */}
-                <Link href={`/plans/${plan?.id}`} className="relative w-full max-h-72 rounded-2xl overflow-hidden group cursor-pointer">
-                  <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition duration-300 ease-in-out"></div>
+                <Link href={`/plans/${plan?.id}`} className="relative w-full max-h-72 rounded-20rd overflow-hidden group cursor-pointer">
+                  <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition duration-300 ease-in-out rounded-20rd "></div>
                   <img
-                    className="rounded-lg !w-full"
+                    className="!w-full rounded-20rd"
                     src={plan?.coverImage}
                     alt={plan?.name}
                   />
