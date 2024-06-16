@@ -6,7 +6,7 @@ import Span from '../ui/Typography/span'
 import PostAvatar from '../avatars/post-avatar'
 import Iconify from '../ui/Iconify-icons/Iconify'
 import FlowVideoTumbnail from '../ui/flow-video-thumbnail'
-import FlowModal from '../ui/flow-modal'
+import FlowModal from '@/sections/modals/flow-modal'
 import { getFlowLikes } from '@/api/getFlowLikes'
 import { postFlowLikes } from '@/api/postFlowLikes'
 import { useAuthContext } from '@/context/auth/useAuthContext';

@@ -1,10 +1,10 @@
 'use client'
-import React, { useRef, useEffect, useState } from 'react'
+import React, { useRef, useEffect } from 'react'
 import FlowModalDesktop from './destop-ui';
-import Iconify from '../Iconify-icons/Iconify';
 import FlowModalMobile from './mobile-ui';
+import Iconify from '@/components/ui/Iconify-icons/Iconify';
 
-const FlowModal = ({ isFlowModalOpen, setIsFlowModalOpen, flowData , updateLikes }) => {
+const FlowModal = ({ isFlowModalOpen, setIsFlowModalOpen, flowData  }) => {
   // States
   const flowModalRef = useRef(null);
 
