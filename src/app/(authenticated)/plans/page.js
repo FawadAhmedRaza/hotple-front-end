@@ -14,6 +14,7 @@ import H4 from "@/components/ui/Typography/h4";
 import Link from "next/link";
 
 
+import PlanSkeleton from "@/components/Skeleton/PlanSkeleton";
 
 const MyPlans = () => {
   const [plans, setPlans] = useState([]);
@@ -41,7 +42,7 @@ const MyPlans = () => {
   }, []);
 
   if (loading) {
-    return <h1>Loading...</h1>;
+    return <div><PlanSkeleton /></div>;
   }
 
   return (

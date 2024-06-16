@@ -20,10 +20,11 @@ import H4 from "@/components/ui/Typography/h4";
 import H3 from "@/components/ui/Typography/h3";
 import Paragraph from "@/components/ui/Typography/paragraph";
 import Div from "@/components/ui/div";
+import EvenetSkeleton from "@/components/Skeleton/EvenetSkeleton";
 
 export default function Events() {
   const [events, setEvents] = useState([]);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [selectedCategory, setSelectedCategory] = useState("");
 
   const [selectedMonth, setSelectedMonth] = useState(
@@ -58,7 +59,7 @@ export default function Events() {
   }, [selectedMonth]);
 
   if (loading) {
-    return <h1>loading...</h1>;
+    return <h1><EvenetSkeleton /></h1>;
   }
   return (
     <Div>

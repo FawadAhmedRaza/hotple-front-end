@@ -4,10 +4,13 @@ import Div from '@/components/ui/div'
 import Button from '@/components/ui/Buttons/button'
 import ExploreCards from '@/sections/explore-cards'
 import { getFlows } from '@/api/flows'
+import FlowSkeleton from '@/components/Skeleton/FlowSkeleton'
 
 const Explore = () => {
     const [activeCat, setActiveCat] = useState('추천')
     const [flows, setFlows] = useState([])
+    const [loading, setLoading] = useState(true);
+
 
     // Raw Data 
     const categoryTabs = [
@@ -55,12 +58,15 @@ const Explore = () => {
             setFlows(response)
         } catch (error) {
             console.log(error.message, 'network error 404')
+        } finally {
+            setLoading(false);
         }
     }
 
     useEffect(() => {
         fetchFlows()
     }, []);
+
 
     return (
 
@@ -75,7 +81,8 @@ const Explore = () => {
 
             </div>
 
-            <ExploreCards flows={flows}/>
+
+            {loading ? <FlowSkeleton flows={flows} /> : <ExploreCards flows={flows} />}
 
         </Div>
     )
